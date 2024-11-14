@@ -1,4 +1,5 @@
 using EnemySystem;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -14,18 +15,22 @@ namespace Core
 
         [SerializeField] private float startCurrency;
 
-        private Currency _currency;
+        private float _currency;
         private int _currentWave;
         private void Awake()
         {
             Instance = this;
-        }
-        private void Start()
-        {
-            _currency = new(startCurrency);
+
+            _currency = startCurrency;
         }
         public int GetCurrentWave() { return _currentWave; }
-        public void AddCurrency(float currency) { _currency.IncreaseCurrency(currency); }
-        public void RemoveCurrency(float currency) { _currency.DecreaseCurrency(currency); }
+        public void AddCurrency(float currency) { _currency += currency; }
+        public void RemoveCurrency(float currency) 
+        {
+            if (currency > _currency) throw new Exception("Higher then current currency");
+
+            _currency -= currency;
+        }
+        public float GetCurrency() { return _currency; }
     }
 }

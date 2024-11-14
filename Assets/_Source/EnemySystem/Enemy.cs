@@ -25,11 +25,16 @@ namespace EnemySystem
             else
             {
                 CurrentHealth -= damage;
+                if (CurrentHealth <= damage)
+                {
+                    Death();
+                }
             }
         }
         public void Death()
         {
             LevelManager.Instance.AddCurrency(DeathReward);
+            Debug.Log($"Current currency - {LevelManager.Instance.GetCurrency()}");
             Destroy(gameObject);
         }
     }

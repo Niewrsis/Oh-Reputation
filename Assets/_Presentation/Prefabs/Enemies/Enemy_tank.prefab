@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6780771692668272739}
   - component: {fileID: 5882167039049434905}
   - component: {fileID: 2409337640934619084}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_tank
   m_TagString: Untagged
   m_Icon: {fileID: 0}

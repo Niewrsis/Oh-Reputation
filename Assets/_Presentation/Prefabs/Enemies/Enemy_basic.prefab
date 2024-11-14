@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 9155252608181377}
   - component: {fileID: 3833192927741539515}
   - component: {fileID: 6127432928786549596}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Enemy_basic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Basic Enemy
   <MaxHealth>k__BackingField: 15
-  <MovementSpeed>k__BackingField: 10
+  <MovementSpeed>k__BackingField: 2.5
   <DeathReward>k__BackingField: 50
 --- !u!114 &6127432928786549596
 MonoBehaviour:
