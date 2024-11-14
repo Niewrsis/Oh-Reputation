@@ -8,45 +8,13 @@ namespace Core
 {
     public class LevelManager : MonoBehaviour
     {
-        public static LevelManager Instance;
+        [field: SerializeField] public float MaxBaseHealth { get; private set; }
+        [field: SerializeField] public int MaxWaves { get; private set; }
 
-        [SerializeField] private int lives = 10;
-        public int TotalLives { get; set; }
-        public int CurrentWave { get; set; }
-        private void Awake()
+        private int _currentWave;
+        public int GetCurrentWave()
         {
-            Instance = this;
-        }
-        private void Start()
-        {
-            TotalLives = lives;
-            CurrentWave = 1;
-        }
-        private void ReduceLives(Enemy enemy)
-        {
-            TotalLives--;
-            if(TotalLives <= 0)
-            {
-                TotalLives = 0;
-                GameOver();
-            }
-        }
-        private void GameOver()
-        {
-            Debug.Log("Game over");
-        }
-        private void WaveCompleted()
-        {
-
-        }
-        private void OnEnable()
-        {
-            Enemy.OnEndReached += ReduceLives;
-            //Spawner.OnWaveCompleted += WaveCompleted;
-        }
-        private void OnDisable()
-        {
-            Enemy.OnEndReached -= ReduceLives;
+            return _currentWave;
         }
     }
 }

@@ -1,12 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace WaypointSystem
 {
     public class Waypoint : MonoBehaviour
     {
-        [SerializeField] private Vector3[] points;
+        [field: SerializeField] public Vector3[] points { get; private set; }
 
         public Vector3[] Points => points;
         public Vector3 CurrentPosition => _currentPosition;
