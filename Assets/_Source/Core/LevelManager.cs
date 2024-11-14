@@ -25,12 +25,7 @@ namespace Core
         }
         public int GetCurrentWave() { return _currentWave; }
         public void AddCurrency(float currency) { _currency += currency; }
-        public void RemoveCurrency(float currency) 
-        {
-            if (currency > _currency) throw new Exception("Higher then current currency");
-
-            _currency -= currency;
-        }
+        public void RemoveCurrency(float currency) { _currency -= currency; }
         public float GetCurrency() { return _currency; }
     }
 }

@@ -1,3 +1,4 @@
+using Core;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,29 +14,41 @@ namespace TowerSystem
         private GameObject _towerObj;
         private bool _isDragging;
         private RectTransform _canvasRect;
+        private Tower _tower;
+        private TowerShoot _towerShoot;
 
         void Start()
         {
             _canvasRect = FindAnyObjectByType<Canvas>().GetComponent<RectTransform>();
+            _tower = towerPrefab.GetComponent<Tower>();
+            _towerShoot = towerPrefab.GetComponent<TowerShoot>();
+            _towerShoot.enabled = false;
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
-            Debug.Log("PointerDown");
             if (_towerObj != null) return;
 
-            Vector2 localPoint = _canvasRect.InverseTransformPoint(Camera.main.ScreenToWorldPoint(eventData.position));
-            _towerObj = Instantiate(towerPrefab, localPoint, Quaternion.identity);
+            _towerObj = Instantiate(towerPrefab, GetLocalPosition(), Quaternion.identity);
             _towerObj.transform.SetParent(transform.parent.parent);
             _isDragging = true;
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            Debug.Log("PointerUp");
             if (_towerObj != null)
             {
-                GameObject newTower = Instantiate(towerPrefab, _towerObj.transform.position, Quaternion.identity);
+                
+                if(_tower.Cost > LevelManager.Instance.GetCurrency())
+                {
+                    Debug.LogWarning("Not enough money to place");
+                }
+                else
+                {
+                    GameObject newTower = Instantiate(towerPrefab, _towerObj.transform.position, Quaternion.identity);
+                    newTower.GetComponent<TowerShoot>().enabled = true;
+                    LevelManager.Instance.RemoveCurrency(_tower.Cost);
+                }
                 Destroy(_towerObj);
                 _towerObj = null;
             }
@@ -48,10 +61,13 @@ namespace TowerSystem
             {
                 if (_towerObj != null)
                 {
-                    Vector2 localPoint = _canvasRect.InverseTransformPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
-                    _towerObj.transform.localPosition = localPoint;
+                    _towerObj.transform.localPosition = GetLocalPosition();
                 }
             }
+        }
+        private Vector2 GetLocalPosition()
+        {
+            return _canvasRect.InverseTransformPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
     }
 }

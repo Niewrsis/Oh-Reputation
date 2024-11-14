@@ -18,6 +18,7 @@ namespace TowerSystem
 
         private void Start()
         {
+            StartCoroutine(LifeTime());
             _rb = GetComponent<Rigidbody2D>();
         }
         private void FixedUpdate()
