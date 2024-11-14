@@ -29,7 +29,7 @@ namespace EnemySystem
         }
         public void Death()
         {
-            //TODO: Logic for adding money to player
+            LevelManager.Instance.AddCurrency(DeathReward);
             Destroy(gameObject);
         }
     }
