@@ -1281,6 +1281,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoint: {fileID: 1942592690}
+  timeBetweenWaves: 5
   waves:
   - waveName: Wave 1
     EnemyCount: 5
@@ -1288,6 +1289,15 @@ MonoBehaviour:
     IsRandomized: 0
     FixedEnemyPrefab: {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
     randomizedEnemyPrefabs: []
+  - waveName: Wave 2
+    EnemyCount: 5
+    DelayBetweenSpawn: 0.5
+    IsRandomized: 1
+    FixedEnemyPrefab: {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    randomizedEnemyPrefabs:
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+    - {fileID: 939369082449346266, guid: 4076583043883ae4087f724a4d629b94, type: 3}
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

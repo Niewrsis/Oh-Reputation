@@ -15,12 +15,6 @@ namespace WaveSystem
 
         [Header("Enemy Prefabs")]
         public GameObject FixedEnemyPrefab;
-        [SerializeField] private GameObject[] randomizedEnemyPrefabs;
-
-        public GameObject GetRandomEnemy()
-        {
-            int rnd = Random.Range(0, randomizedEnemyPrefabs.Length);
-            return randomizedEnemyPrefabs[rnd];
-        }
+        public GameObject[] RandomizedEnemyPrefabs;
     }
 }

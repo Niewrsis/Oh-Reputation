@@ -11,7 +11,6 @@ namespace Core
     {
         public static LevelManager Instance;
         [field: SerializeField] public float MaxBaseHealth { get; private set; }
-        [field: SerializeField] public int MaxWaves { get; private set; }
 
         [SerializeField] private float startCurrency;
 
