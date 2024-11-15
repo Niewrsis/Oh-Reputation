@@ -7,7 +7,6 @@ namespace EnemySystem
     [RequireComponent(typeof(Rigidbody2D), typeof(EnemyMovement))]
     public class Enemy : MonoBehaviour
     {
-        public static Action OnEnemyDeath;
         [field: SerializeField] public string Name { get; private set; }
         [field: SerializeField] public float MaxHealth { get; private set; }
         [field: SerializeField] public float MovementSpeed { get; private set; }
@@ -16,7 +15,6 @@ namespace EnemySystem
 
         private void Start()
         {
-            OnEnemyDeath += Death;
             CurrentHealth = MaxHealth;
         }
         public void TakeDamage(float damage)
@@ -30,7 +28,7 @@ namespace EnemySystem
                 CurrentHealth -= damage;
                 if (CurrentHealth <= damage)
                 {
-                    OnEnemyDeath?.Invoke();
+                    Death();
                 }
             }
         }
@@ -39,10 +37,6 @@ namespace EnemySystem
             LevelManager.Instance.AddCurrency(DeathReward);
             Debug.Log($"Current currency - {LevelManager.Instance.GetCurrency()}");
             Destroy(gameObject);
-        }
-        private void OnDestroy()
-        {
-            OnEnemyDeath -= Death;
         }
     }
 }
