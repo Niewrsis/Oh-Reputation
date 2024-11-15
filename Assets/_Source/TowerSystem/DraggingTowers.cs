@@ -1,12 +1,14 @@
 using Core;
 using System.Collections;
 using System.Collections.Generic;
+using TowerSystem.View;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 namespace TowerSystem
 {
+    [RequireComponent(typeof(TowerIcon))]
     public class DraggingTowers : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] private GameObject towerPrefab;
@@ -17,13 +19,18 @@ namespace TowerSystem
         private RectTransform _canvasRect;
         private Tower _tower;
         private TowerShoot _towerShoot;
+        private TowerIcon _towerIcon;
 
         void Start()
         {
             _canvasRect = FindAnyObjectByType<Canvas>().GetComponent<RectTransform>();
+
             _tower = towerPrefab.GetComponent<Tower>();
             _towerShoot = towerPrefab.GetComponent<TowerShoot>();
             _towerShoot.enabled = false;
+
+            _towerIcon = GetComponent<TowerIcon>();
+            _towerIcon.Construct(_tower.Cost);
         }
 
         public void OnPointerDown(PointerEventData eventData)

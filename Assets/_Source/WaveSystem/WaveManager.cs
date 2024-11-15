@@ -18,8 +18,8 @@ namespace WaveSystem
         [SerializeField] private Wave[] waves;
 
         private int _currentWaveID = 1;
-        private bool _isWaitingNextWave;
-        private int _enemiesAlive;
+        //private bool _isWaitingNextWave;
+        //private int _enemiesAlive;
 
         private void Start()
         {
@@ -41,8 +41,7 @@ namespace WaveSystem
             for (int i = 0; i < GetCurrentWave().EnemyCount; i++)
             {
                 Instantiate(enemy, waypoint.Points[0], Quaternion.identity);
-                _enemiesAlive++;
-                Debug.Log(_enemiesAlive);
+                //_enemiesAlive++;
                 yield return new WaitForSeconds(GetCurrentWave().DelayBetweenSpawn);
             }
             _currentWaveID++;
@@ -54,8 +53,7 @@ namespace WaveSystem
             {
                 int rnd = Random.Range(0, enemies.Length - 1);
                 Instantiate(enemies[rnd], waypoint.Points[0], Quaternion.identity);
-                _enemiesAlive++;
-                Debug.Log(_enemiesAlive);
+                //_enemiesAlive++;
                 yield return new WaitForSeconds(GetCurrentWave().DelayBetweenSpawn);
             }
             _currentWaveID++;
@@ -65,9 +63,9 @@ namespace WaveSystem
         {
             //_enemiesAlive = 0;
             if (_currentWaveID > waves.Length) yield return null;
-            _isWaitingNextWave = true;
+            //_isWaitingNextWave = true;
             yield return new WaitForSeconds(timeBetweenWaves);
-            _isWaitingNextWave = false;
+            //_isWaitingNextWave = false;
             SpawnEnemies();
         }
         private Wave GetCurrentWave()
