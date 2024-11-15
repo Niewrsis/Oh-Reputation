@@ -72,5 +72,9 @@ namespace WaveSystem
         {
             return waves[_currentWaveID - 1];
         }
+        public int GetCurrentWaveID()
+        {
+            return _currentWaveID;
+        }
     }
 }

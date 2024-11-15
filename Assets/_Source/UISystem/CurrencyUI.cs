@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-namespace UIMangager
+namespace UISystem
 {
     public class CurrencyUI : MonoBehaviour
     {
