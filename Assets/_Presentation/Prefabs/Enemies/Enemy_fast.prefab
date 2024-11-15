@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 981875853949119459}
   - component: {fileID: 1558010925362182535}
   - component: {fileID: 2347332248734966076}
-  - component: {fileID: 6820718244679657864}
   - component: {fileID: 4667394016764485973}
+  - component: {fileID: 6820718244679657864}
   - component: {fileID: -3219427588282099797}
   m_Layer: 6
   m_Name: Enemy_fast
@@ -115,7 +115,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &2347332248734966076
 Animator:
   serializedVersion: 5
@@ -137,22 +137,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6820718244679657864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939369082449346266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19143910fff2bab479ba0697078d6f6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Name>k__BackingField: Fast Enemy
-  <MaxHealth>k__BackingField: 10
-  <MovementSpeed>k__BackingField: 20
-  <DeathReward>k__BackingField: 75
 --- !u!61 &4667394016764485973
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -198,6 +182,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.3, y: 0.38}
   m_EdgeRadius: 0
+--- !u!114 &6820718244679657864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939369082449346266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19143910fff2bab479ba0697078d6f6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Fast Enemy
+  <MaxHealth>k__BackingField: 10
+  <MovementSpeed>k__BackingField: 20
+  <DeathReward>k__BackingField: 75
 --- !u!114 &-3219427588282099797
 MonoBehaviour:
   m_ObjectHideFlags: 0
