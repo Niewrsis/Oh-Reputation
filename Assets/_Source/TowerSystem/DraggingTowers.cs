@@ -10,6 +10,7 @@ namespace TowerSystem
     public class DraggingTowers : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         [SerializeField] private GameObject towerPrefab;
+        [SerializeField] private LayerMask groundMask;
 
         private GameObject _towerObj;
         private bool _isDragging;
@@ -45,9 +46,16 @@ namespace TowerSystem
                 }
                 else
                 {
-                    GameObject newTower = Instantiate(towerPrefab, _towerObj.transform.position, Quaternion.identity);
-                    newTower.GetComponent<TowerShoot>().enabled = true;
-                    LevelManager.Instance.RemoveCurrency(_tower.Cost);
+                    //if(!CheckGroundLayer())
+                    //{
+                    //    Debug.LogWarning("You cannot place it here");
+                    //}
+                    //else
+                    //{
+                        GameObject newTower = Instantiate(towerPrefab, _towerObj.transform.position, Quaternion.identity);
+                        newTower.GetComponent<TowerShoot>().enabled = true;
+                        LevelManager.Instance.RemoveCurrency(_tower.Cost);
+                    //}
                 }
                 Destroy(_towerObj);
                 _towerObj = null;
@@ -69,5 +77,20 @@ namespace TowerSystem
         {
             return _canvasRect.InverseTransformPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
+        //TODO: Improve this system!
+
+        /*private bool CheckGroundLayer()
+        {
+            RaycastHit2D ray = Physics2D.Raycast(transform.position, new Vector2(.01f, .01f), .01f, groundMask);
+            if (ray.collider != null)
+            {
+                Debug.Log(ray.collider.name);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }*/
     }
 }

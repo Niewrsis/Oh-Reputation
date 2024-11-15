@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3007134804345610412}
   - component: {fileID: 3828846879056913990}
   - component: {fileID: 4089924355288560561}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: BasicTower
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5737491538616507204}
   - component: {fileID: 4610557590379856434}
-  m_Layer: 10
+  m_Layer: 11
   m_Name: Range
   m_TagString: Untagged
   m_Icon: {fileID: 0}
