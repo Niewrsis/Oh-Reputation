@@ -1,6 +1,7 @@
 using Core;
 using System;
 using UnityEngine;
+using WaveSystem;
 
 namespace EnemySystem
 {
@@ -35,7 +36,7 @@ namespace EnemySystem
         public void Death()
         {
             LevelManager.Instance.AddCurrency(DeathReward);
-            Debug.Log($"Current currency - {LevelManager.Instance.GetCurrency()}");
+            WaveManager.OnEnemyDeath?.Invoke();
             Destroy(gameObject);
         }
     }

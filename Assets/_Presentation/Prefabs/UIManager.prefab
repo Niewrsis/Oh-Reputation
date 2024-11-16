@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2440313545276013475}
   - component: {fileID: 4932293254000681116}
+  - component: {fileID: 7947962985697049615}
   m_Layer: 0
   m_Name: UIManager
   m_TagString: Untagged
@@ -45,3 +46,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moneyText: {fileID: 0}
+--- !u!114 &7947962985697049615
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 907425692436216270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97757249b7be5f543891dd9efb39d332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waveText: {fileID: 0}

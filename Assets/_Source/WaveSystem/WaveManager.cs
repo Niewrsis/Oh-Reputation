@@ -1,13 +1,18 @@
 using EnemySystem;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UISystem;
 using UnityEngine;
+using UnityEngine.Events;
 using WaypointSystem;
 
 namespace WaveSystem
 {
     public class WaveManager : MonoBehaviour
     {
+        public static UnityAction OnEnemyDeath;
+
         [Header("References")]
         [SerializeField] private Waypoint waypoint;
 
@@ -19,10 +24,12 @@ namespace WaveSystem
 
         private int _currentWaveID = 1;
         //private bool _isWaitingNextWave;
-        //private int _enemiesAlive;
+        private int _enemiesAlive;
 
         private void Start()
         {
+            OnEnemyDeath += EnemyDied;
+            WavesUI.OnWavesDraw?.Invoke();
             SpawnEnemies();
         }
         private void SpawnEnemies()
@@ -41,7 +48,7 @@ namespace WaveSystem
             for (int i = 0; i < GetCurrentWave().EnemyCount; i++)
             {
                 Instantiate(enemy, waypoint.Points[0], Quaternion.identity);
-                //_enemiesAlive++;
+                _enemiesAlive++;
                 yield return new WaitForSeconds(GetCurrentWave().DelayBetweenSpawn);
             }
             _currentWaveID++;
@@ -51,9 +58,9 @@ namespace WaveSystem
         {
             for (int i = 0; i < GetCurrentWave().EnemyCount; i++)
             {
-                int rnd = Random.Range(0, enemies.Length - 1);
+                int rnd = UnityEngine.Random.Range(0, enemies.Length - 1);
                 Instantiate(enemies[rnd], waypoint.Points[0], Quaternion.identity);
-                //_enemiesAlive++;
+                _enemiesAlive++;
                 yield return new WaitForSeconds(GetCurrentWave().DelayBetweenSpawn);
             }
             _currentWaveID++;
@@ -61,12 +68,27 @@ namespace WaveSystem
         }
         private IEnumerator WaitUntilNextWave()
         {
-            //_enemiesAlive = 0;
-            if (_currentWaveID > waves.Length) yield return null;
-            //_isWaitingNextWave = true;
-            yield return new WaitForSeconds(timeBetweenWaves);
-            //_isWaitingNextWave = false;
-            SpawnEnemies();
+            if (_currentWaveID > waves.Length)
+            {
+                StartCoroutine(WaitToAllEnemiesDeath());
+                yield return null;
+            }
+            else
+            {
+                yield return new WaitForSeconds(timeBetweenWaves);
+                WavesUI.OnWavesDraw?.Invoke();
+                SpawnEnemies();
+            }
+        }
+        private IEnumerator WaitToAllEnemiesDeath()
+        {
+            while(_enemiesAlive > 0)
+            {
+                yield return new WaitForSeconds(.1f);
+            }
+
+            Debug.Log("Game finished");
+            //TODO: Logic for end screen
         }
         private Wave GetCurrentWave()
         {
@@ -75,6 +97,11 @@ namespace WaveSystem
         public int GetCurrentWaveID()
         {
             return _currentWaveID;
+        }
+        private void EnemyDied()
+        {
+            _enemiesAlive--;
+            Debug.Log("Enemies left " + _enemiesAlive);
         }
     }
 }

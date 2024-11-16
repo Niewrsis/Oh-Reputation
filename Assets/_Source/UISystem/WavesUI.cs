@@ -2,12 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using WaveSystem;
 
 namespace UISystem
 {
     public class WavesUI : MonoBehaviour
     {
+        public static UnityAction OnWavesDraw;
+
         [SerializeField] private TextMeshProUGUI waveText;
 
         private WaveManager _waveManager;
@@ -15,10 +18,8 @@ namespace UISystem
         private void Start()
         {
             _waveManager = FindAnyObjectByType<WaveManager>();
-        }
-        private void Update()
-        {
-            UpdateWaveText();
+
+            OnWavesDraw += UpdateWaveText;
         }
         private void UpdateWaveText()
         {
