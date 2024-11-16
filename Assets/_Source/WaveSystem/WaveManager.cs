@@ -23,7 +23,6 @@ namespace WaveSystem
         [SerializeField] private Wave[] waves;
 
         private int _currentWaveID = 1;
-        //private bool _isWaitingNextWave;
         private int _enemiesAlive;
 
         private void Start()
@@ -101,7 +100,6 @@ namespace WaveSystem
         private void EnemyDied()
         {
             _enemiesAlive--;
-            Debug.Log("Enemies left " + _enemiesAlive);
         }
     }
 }
