@@ -14,16 +14,20 @@ namespace Core
         public GameState CurrentGameState { get; private set; }
 
         private float _currency;
+        private float _currentBaseHP;
         private void Awake()
         {
             Instance = this;
 
+            _currentBaseHP = MaxBaseHealth;
             CurrentGameState = GameState.InGame;
             _currency = startCurrency;
         }
         public void AddCurrency(float currency) { _currency += currency; }
         public void RemoveCurrency(float currency) { _currency -= currency; }
+        public void RemoveBaseHP(float damage) { _currentBaseHP -= damage; }
         public float GetCurrency() { return _currency; }
+        public float GetCurrentBaseHP() { return _currentBaseHP; }
         public void SwitchCurrentState(GameState state) { CurrentGameState = state; }
     }
 }

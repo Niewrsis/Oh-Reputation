@@ -34,17 +34,17 @@ namespace SceneSystem
         {
             if(gameState == GameState.Win)
             {
-                _totalReward = UnityEngine.Random.Range(LevelManager.Instance.MinLevelReward, LevelManager.Instance.MaxLevelReward);
+                _totalReward = Mathf.RoundToInt(UnityEngine.Random.Range(LevelManager.Instance.MinLevelReward, LevelManager.Instance.MaxLevelReward));
 
                 gameStateText.text = "Win";
-                rewardText.text = _totalReward.ToString();
+                rewardText.text = $"+{_totalReward.ToString()}";
 
                 //TODO: Make logic for adding money to global wallet
             }
             else if(gameState == GameState.Lose)
             {
                 gameStateText.text = "Lose";
-                rewardText.text = "0";
+                rewardText.text = "+0";
             }
             else
             {

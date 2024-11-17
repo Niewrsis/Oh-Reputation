@@ -1,4 +1,6 @@
+using Core;
 using EnemySystem;
+using SceneSystem;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -85,9 +87,9 @@ namespace WaveSystem
             {
                 yield return new WaitForSeconds(.1f);
             }
-
-            Debug.Log("Game finished");
-            //TODO: Logic for end screen
+            LevelManager.Instance.SwitchCurrentState(GameState.Win);
+            yield return new WaitForSeconds(1f);
+            EndGameScreen.OnGameEnd?.Invoke();
         }
         private Wave GetCurrentWave()
         {

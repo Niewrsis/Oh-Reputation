@@ -2425,6 +2425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: EndGameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8958620686443864824, guid: 7ca8d0903496b3c459dcda4eb5065bd6, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2493,8 +2497,31 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 907425692436216270, guid: 1c8912bf9fe6ad745a2430b575e0a0d6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5551997211644111214}
   m_SourcePrefab: {fileID: 100100000, guid: 1c8912bf9fe6ad745a2430b575e0a0d6, type: 3}
+--- !u!1 &5551997211644111213 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 907425692436216270, guid: 1c8912bf9fe6ad745a2430b575e0a0d6, type: 3}
+  m_PrefabInstance: {fileID: 5551997211644111212}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5551997211644111214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5551997211644111213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da938c1244c39264dbb783697c200425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenPreab: {fileID: 1321826117}
+  gameStateText: {fileID: 1391455259}
+  rewardText: {fileID: 668780511}
 --- !u!1001 &7921503427958731367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2503,6 +2530,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3857705553778114185, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
+      propertyPath: <MaxLevelReward>k__BackingField
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 3857705553778114185, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
+      propertyPath: <MinLevelReward>k__BackingField
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 3959397865427213471, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
       propertyPath: m_Name
       value: LevelManager
