@@ -103,7 +103,8 @@ namespace Core
             _availableTowers.Add(newAvailableTower);
             return true;
         }
-        public GameObject[] GetAllInventoryTowers() { return _currentInventoryTowers; }
+        public List<GameObject> GetAllInventoryTowers() { return _availableTowers; }
+        public GameObject[] GetCurrentInventoryTowers() { return _currentInventoryTowers; }
         public void TryAddTowerToInventory(GameObject tower)
         {
             //if (_currentInventoryTowers.Length >= 3) throw new Exception("Inventory already full");

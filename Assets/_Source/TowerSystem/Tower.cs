@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace TowerSystem
@@ -13,6 +11,7 @@ namespace TowerSystem
         [field: SerializeField] public float Cooldown { get; private set; }
         [field: SerializeField] public float Cost { get; private set; }
         [field: SerializeField] public TowerType Type { get; private set; }
+        [field: SerializeField] public Sprite Icon { get; private set; }
 
         [SerializeField] private GameObject rangeObj;
 
