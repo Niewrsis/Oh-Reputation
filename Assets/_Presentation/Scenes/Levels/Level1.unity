@@ -2280,6 +2280,14 @@ PrefabInstance:
       propertyPath: <points>k__BackingField.Array.data[5].y
       value: -2.3837965
       objectReference: {fileID: 0}
+    - target: {fileID: 686182367285563430, guid: 4382a5e8143e1ca46a7f381f69b3fd36, type: 3}
+      propertyPath: <points>k__BackingField.Array.data[6].x
+      value: 5.935256
+      objectReference: {fileID: 0}
+    - target: {fileID: 686182367285563430, guid: 4382a5e8143e1ca46a7f381f69b3fd36, type: 3}
+      propertyPath: <points>k__BackingField.Array.data[6].y
+      value: 3.0578284
+      objectReference: {fileID: 0}
     - target: {fileID: 2094132105833717410, guid: 4382a5e8143e1ca46a7f381f69b3fd36, type: 3}
       propertyPath: m_Name
       value: Waypoints

@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/_Presentation/Scenes/LevelChoosingMenu.unity
     guid: 25ad0fa8290835f4d8c332316d779e5f
   - enabled: 1
+    path: Assets/_Presentation/Scenes/InventoryMenu.unity
+    guid: 0f8e8fddcc0d18147a3b4ba3126b421c
+  - enabled: 1
     path: Assets/_Presentation/Scenes/ShopMenu.unity
     guid: ba912630a36690f499fd63eb3e3a784c
   - enabled: 1
