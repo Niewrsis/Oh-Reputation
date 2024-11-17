@@ -24,8 +24,8 @@ namespace MainMenu
             _isSettingsActive = false;
 
             startButton.onClick.AddListener(GoToLevelChooser);
-            inventoryButton.onClick.AddListener(GoToInventoryMenu);
-            shopButton.onClick.AddListener(GoToShopMenu);
+            //inventoryButton.onClick.AddListener(GoToInventoryMenu);
+            //shopButton.onClick.AddListener(GoToShopMenu);
             settingsButton.onClick.AddListener(OnSettings);
             closeSettingsButton.onClick.AddListener(OnSettings);
         }

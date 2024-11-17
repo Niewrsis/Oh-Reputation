@@ -17,8 +17,9 @@ namespace Core
         private GameObject[] _currentInventoryTowers = new GameObject[3];
         private List<GameObject> _availableTowers = new List<GameObject>();
        
+        [HideInInspector] public int Levels;
         public float Currency { get; private set; }
-
+        
         private void Awake()
         {
             if (main != null && main != this)
@@ -47,6 +48,8 @@ namespace Core
 
             _availableTowers.Add(allTowers[0]);
             CheckTowers();
+
+            LoadLevels();
         }
         public void AddCurrency(float amount)
         {
@@ -110,7 +113,8 @@ namespace Core
             //if (_currentInventoryTowers.Length >= 3) throw new Exception("Inventory already full");
             for (int i = 0; i < _currentInventoryTowers.Length - 1; i++)
             {
-                if( _currentInventoryTowers[i] ==  tower) throw new Exception("This tower already in inventory");
+                if( _currentInventoryTowers[i] ==  tower) 
+                    throw new Exception("This tower already in inventory");
             }
             for (int i = 0; i < _currentInventoryTowers.Length - 1; i++)
             {
@@ -123,9 +127,23 @@ namespace Core
         }
         public void TryAddTowerToInventory(GameObject tower, int slot)
         {
-            if (_currentInventoryTowers[slot - 1] == tower) Debug.LogWarning("This tower already at this slot");
+            if (_currentInventoryTowers[slot - 1] == tower) 
+                Debug.LogWarning("This tower already at this slot");
 
             _currentInventoryTowers[slot - 1] = tower;
         }
+        private void LoadLevels()
+        {
+            if(PlayerPrefs.GetInt(GlobalKeys.LEVELS_PP_STRING) <= 1)
+            {
+                Levels = 1;
+                PlayerPrefs.SetInt(GlobalKeys.LEVELS_PP_STRING, Levels);
+            }
+            else
+            {
+                PlayerPrefs.GetInt(GlobalKeys.LEVELS_PP_STRING, Levels);
+            }
+        }
+        public void LevelCompleted() { Levels++; }
     }
 }
