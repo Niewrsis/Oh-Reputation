@@ -5,6 +5,7 @@ namespace Core
     public class LevelManager : MonoBehaviour
     {
         public static LevelManager Instance;
+
         [field: SerializeField] public float MaxBaseHealth { get; private set; }
         [field: SerializeField] public float MaxLevelReward { get; private set; }
         [field: SerializeField] public float MinLevelReward { get; private set; }

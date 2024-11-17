@@ -1,3 +1,5 @@
+using Core;
+using SceneSystem;
 using UnityEngine;
 using WaypointSystem;
 
@@ -65,7 +67,14 @@ namespace EnemySystem
             }
             else
             {
+                LevelManager.Instance.RemoveBaseHP(_enemy.CurrentHealth);
                 _enemy.Death();
+
+                if(LevelManager.Instance.GetCurrentBaseHP() <= 0)
+                {
+                    LevelManager.Instance.SwitchCurrentState(GameState.Lose);
+                    EndGameScreen.OnGameEnd?.Invoke();
+                }
             }
         }
     }
