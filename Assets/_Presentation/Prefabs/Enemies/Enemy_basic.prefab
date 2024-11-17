@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7139892151665017962}
   - component: {fileID: 981875853949119459}
-  - component: {fileID: 4492281037672607694}
   - component: {fileID: 8459797183128274261}
   - component: {fileID: 9155252608181377}
   - component: {fileID: 3833192927741539515}
@@ -78,38 +77,17 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -5219337101871392587, guid: bf4df7b2c9cda4c44b372e2b47a5cb8f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 091794673b3f1774d90f5909790983c8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.64, y: 0.32}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4492281037672607694
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939369082449346266}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a8f400c56ea4ec54eb42676ef12151cd, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!61 &8459797183128274261
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -146,8 +124,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.64, y: 0.32}
-    newSize: {x: 1, y: 1}
+    oldSize: {x: 4.44, y: 4.84}
+    newSize: {x: 0.64, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -195,9 +173,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Basic Enemy
-  <MaxHealth>k__BackingField: 15
-  <MovementSpeed>k__BackingField: 2.5
-  <DeathReward>k__BackingField: 50
+  <MaxHealth>k__BackingField: 100
+  <MovementSpeed>k__BackingField: 2
+  <DeathReward>k__BackingField: 30
 --- !u!114 &6127432928786549596
 MonoBehaviour:
   m_ObjectHideFlags: 0

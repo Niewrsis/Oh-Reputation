@@ -59,7 +59,7 @@ namespace WaveSystem
         {
             for (int i = 0; i < GetCurrentWave().EnemyCount; i++)
             {
-                int rnd = UnityEngine.Random.Range(0, enemies.Length - 1);
+                int rnd = UnityEngine.Random.Range(0, enemies.Length);
                 Instantiate(enemies[rnd], waypoint.Points[0], Quaternion.identity);
                 _enemiesAlive++;
                 yield return new WaitForSeconds(GetCurrentWave().DelayBetweenSpawn);

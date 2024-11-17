@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 7378070058276420289}
   - component: {fileID: 3857705553778114185}
+  - component: {fileID: 8925700678463846640}
+  - component: {fileID: 4185622468372840785}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Untagged
@@ -45,5 +47,127 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <MaxBaseHealth>k__BackingField: 100
-  <MaxWaves>k__BackingField: 15
+  <MaxLevelReward>k__BackingField: 150
+  <MinLevelReward>k__BackingField: 100
   startCurrency: 100
+--- !u!114 &8925700678463846640
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959397865427213471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 154ae3fa824a70f4f92348d11246d628, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoint: {fileID: 0}
+  timeBetweenWaves: 5
+  waves:
+  - waveName: Wave 1
+    EnemyCount: 3
+    DelayBetweenSpawn: 0.6
+    IsRandomized: 0
+    FixedEnemyPrefab: {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    RandomizedEnemyPrefabs: []
+  - waveName: Wave 2
+    EnemyCount: 7
+    DelayBetweenSpawn: 0.6
+    IsRandomized: 0
+    FixedEnemyPrefab: {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    RandomizedEnemyPrefabs: []
+  - waveName: Wave 3
+    EnemyCount: 10
+    DelayBetweenSpawn: 0.6
+    IsRandomized: 1
+    FixedEnemyPrefab: {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    RandomizedEnemyPrefabs:
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: 4076583043883ae4087f724a4d629b94, type: 3}
+  - waveName: Wave 4
+    EnemyCount: 13
+    DelayBetweenSpawn: 0.6
+    IsRandomized: 1
+    FixedEnemyPrefab: {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    RandomizedEnemyPrefabs:
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: 4076583043883ae4087f724a4d629b94, type: 3}
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+  - waveName: Wave 5
+    EnemyCount: 16
+    DelayBetweenSpawn: 0.6
+    IsRandomized: 1
+    FixedEnemyPrefab: {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    RandomizedEnemyPrefabs:
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: 4076583043883ae4087f724a4d629b94, type: 3}
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+  - waveName: Wave 6
+    EnemyCount: 10
+    DelayBetweenSpawn: 0.6
+    IsRandomized: 0
+    FixedEnemyPrefab: {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+    RandomizedEnemyPrefabs:
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: 4076583043883ae4087f724a4d629b94, type: 3}
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+  - waveName: Wave 7
+    EnemyCount: 21
+    DelayBetweenSpawn: 0.6
+    IsRandomized: 1
+    FixedEnemyPrefab: {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+    RandomizedEnemyPrefabs:
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: 4076583043883ae4087f724a4d629b94, type: 3}
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+  - waveName: Wave 8
+    EnemyCount: 30
+    DelayBetweenSpawn: 0.45
+    IsRandomized: 0
+    FixedEnemyPrefab: {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    RandomizedEnemyPrefabs:
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: 4076583043883ae4087f724a4d629b94, type: 3}
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+  - waveName: Wave 9
+    EnemyCount: 30
+    DelayBetweenSpawn: 0.3
+    IsRandomized: 0
+    FixedEnemyPrefab: {fileID: 939369082449346266, guid: 4076583043883ae4087f724a4d629b94, type: 3}
+    RandomizedEnemyPrefabs:
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: 4076583043883ae4087f724a4d629b94, type: 3}
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+  - waveName: Wave 10
+    EnemyCount: 30
+    DelayBetweenSpawn: 0.6
+    IsRandomized: 0
+    FixedEnemyPrefab: {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+    RandomizedEnemyPrefabs:
+    - {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
+    - {fileID: 939369082449346266, guid: 4076583043883ae4087f724a4d629b94, type: 3}
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+    - {fileID: 939369082449346266, guid: 48f873966db116a4181bb0f89abc0244, type: 3}
+--- !u!114 &4185622468372840785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3959397865427213471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da938c1244c39264dbb783697c200425, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screenPreab: {fileID: 0}
+  gameStateText: {fileID: 0}
+  rewardText: {fileID: 0}
