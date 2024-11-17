@@ -1,13 +1,16 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace Core
 {
     public class GameManager : MonoBehaviour
     {
         public static GameManager main;
-        
+
+        public UnityAction OnCurrencyChanged;
+
         [SerializeField] private float startCurrency;
         [SerializeField] private List<GameObject> allTowers;
 
@@ -49,11 +52,13 @@ namespace Core
         {
             Currency += amount;
             SetCurrency();
+            OnCurrencyChanged?.Invoke();
         }
         public void RemoveCurrency(float amount)
         {
             Currency -= amount;
             SetCurrency();
+            OnCurrencyChanged?.Invoke();
         }
         private void SetCurrency() { PlayerPrefs.SetFloat(GlobalKeys.CURRENCY_PP_STRING, Currency); }
         private void GetCurrency() { PlayerPrefs.GetFloat(GlobalKeys.CURRENCY_PP_STRING, Currency); }
