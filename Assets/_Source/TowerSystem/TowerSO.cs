@@ -16,7 +16,7 @@ namespace TowerSystem
         public float BaseCooldown;
         public float BaseCost;
         public int MaximumCount;
-        public int CurrentCount { get; private set; }
+        public int CurrentCount { get; set; }
 
         [Space, Header("AOE Settings")]
         public bool IsAOE;
@@ -31,10 +31,6 @@ namespace TowerSystem
         public GameObject Projectile;
         public LayerMask EnemyLayer;
 
-        private void Awake()
-        {
-            CurrentCount = 0;
-        }
         public bool TryAddOneTower()
         {
             Debug.Log(CurrentCount);

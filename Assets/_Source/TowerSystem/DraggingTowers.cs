@@ -27,6 +27,8 @@ namespace TowerSystem
                 this.enabled = false;
                 return;
             }
+            tower.CurrentCount = 0;
+
             _canvasRect = FindAnyObjectByType<Canvas>().GetComponent<RectTransform>();
 
             _towerIcon = GetComponent<TowerIcon>();
@@ -48,14 +50,22 @@ namespace TowerSystem
         public void OnPointerUp(PointerEventData eventData)
         {
             if (tower == null) return;
-            if (_towerObj == null) return;
-
-            if(tower.BaseCost > LevelManager.Instance.GetCurrency())
+            if (_towerObj == null)
             {
-                Debug.LogWarning("Not enough money to place");
+                Destroy(_towerObj);
+                _towerObj = null;
+                _isDragging = false;
                 return;
             }
 
+                if (tower.BaseCost > LevelManager.Instance.GetCurrency())
+            {
+                Debug.LogWarning("Not enough money to place");
+                Destroy(_towerObj);
+                _towerObj = null;
+                _isDragging = false;
+                return;
+            }
             if(tower.TryAddOneTower() == true)
             {
                 GameObject newTower = Instantiate(tower.Prefab, _towerObj.transform.position, Quaternion.identity);
