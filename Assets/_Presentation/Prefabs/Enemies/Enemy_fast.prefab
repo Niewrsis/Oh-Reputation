@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 1558010925362182535}
   - component: {fileID: 4667394016764485973}
   - component: {fileID: 6820718244679657864}
-  - component: {fileID: -3219427588282099797}
   m_Layer: 6
   m_Name: Enemy_fast
   m_TagString: Untagged
@@ -151,7 +150,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.12, y: 4.73}
+    oldSize: {x: 0.412, y: 0.473}
     newSize: {x: 0.3, y: 0.38}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -172,19 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19143910fff2bab479ba0697078d6f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Fast Enemy
-  <MaxHealth>k__BackingField: 45
-  <MovementSpeed>k__BackingField: 3
-  <DeathReward>k__BackingField: 55
---- !u!114 &-3219427588282099797
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939369082449346266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4198edb94e83b64381ee02c9fbca049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  enemy: {fileID: 11400000, guid: 9f691bd17e2be2547b870e16543ad7dc, type: 2}

@@ -2,6 +2,7 @@ using Core;
 using System.Collections;
 using System.Collections.Generic;
 using TowerSystem.View;
+using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -11,68 +12,73 @@ namespace TowerSystem
     [RequireComponent(typeof(TowerIcon))]
     public class DraggingTowers : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
-        [SerializeField] private GameObject towerPrefab;
         [SerializeField] private LayerMask groundMask;
+        [SerializeField] private TowerSO tower;
 
         private GameObject _towerObj;
         private bool _isDragging;
         private RectTransform _canvasRect;
-        private Tower _tower;
-        private TowerShoot _towerShoot;
         private TowerIcon _towerIcon;
 
         void Start()
         {
+            if (tower == null)
+            {
+                this.enabled = false;
+                return;
+            }
             _canvasRect = FindAnyObjectByType<Canvas>().GetComponent<RectTransform>();
 
-            _tower = towerPrefab.GetComponent<Tower>();
-            _towerShoot = towerPrefab.GetComponent<TowerShoot>();
-            _towerShoot.enabled = false;
-
             _towerIcon = GetComponent<TowerIcon>();
-            _towerIcon.Construct(_tower.Cost);
+
+            _towerIcon.Construct(tower);
+
         }
 
         public void OnPointerDown(PointerEventData eventData)
         {
+            if (tower == null) return;
             if (_towerObj != null) return;
 
-            _towerObj = Instantiate(towerPrefab, GetLocalPosition(), Quaternion.identity);
+            _towerObj = Instantiate(tower.Prefab, GetLocalPosition(), Quaternion.identity);
             _towerObj.transform.SetParent(transform.parent.parent);
             _isDragging = true;
         }
 
         public void OnPointerUp(PointerEventData eventData)
         {
-            if (_towerObj != null)
+            if (tower == null) return;
+            if (_towerObj == null) return;
+
+            if(tower.BaseCost > LevelManager.Instance.GetCurrency())
             {
-                
-                if(_tower.Cost > LevelManager.Instance.GetCurrency())
-                {
-                    Debug.LogWarning("Not enough money to place");
-                }
-                else
-                {
-                    //if(!CheckGroundLayer())
-                    //{
-                    //    Debug.LogWarning("You cannot place it here");
-                    //}
-                    //else
-                    //{
-                        GameObject newTower = Instantiate(towerPrefab, _towerObj.transform.position, Quaternion.identity);
-                        newTower.GetComponent<TowerShoot>().enabled = true;
-                        LevelManager.Instance.RemoveCurrency(_tower.Cost);
-                    //}
-                }
-                Destroy(_towerObj);
-                _towerObj = null;
+                Debug.LogWarning("Not enough money to place");
+                return;
             }
+
+            if(tower.TryAddOneTower() == true)
+            {
+                GameObject newTower = Instantiate(tower.Prefab, _towerObj.transform.position, Quaternion.identity);
+                newTower.GetComponent<TowerShoot>().enabled = true;
+                LevelManager.Instance.RemoveCurrency(tower.BaseCost);
+            }
+
+            //if(CheckGroundLayer() == false)
+            //{
+            //    Debug.LogWarning("You cannot place it here");
+            //}
+            //else
+            //{
+
+            Destroy(_towerObj);
+            _towerObj = null;
             _isDragging = false;
         }
 
         void Update()
         {
-            if (_isDragging)
+            if (tower == null) return;
+                if (_isDragging)
             {
                 if (_towerObj != null)
                 {
@@ -86,10 +92,12 @@ namespace TowerSystem
         }
         //TODO: Improve this system!
 
-        /*private bool CheckGroundLayer()
+        private bool CheckGroundLayer()
         {
-            RaycastHit2D ray = Physics2D.Raycast(transform.position, new Vector2(.01f, .01f), .01f, groundMask);
-            if (ray.collider != null)
+            Debug.Log(GetLocalPosition());
+            RaycastHit2D ray = Physics2D.Raycast(GetLocalPosition(), new Vector2(.01f, .01f), .01f, groundMask);
+            Debug.Log(ray.collider);
+            if (ray.collider.CompareTag("PlaceForSpawn"))
             {
                 Debug.Log(ray.collider.name);
                 return true;
@@ -98,6 +106,6 @@ namespace TowerSystem
             {
                 return false;
             }
-        }*/
+        }
     }
 }

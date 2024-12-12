@@ -8,16 +8,17 @@ namespace TowerSystem.View
 {
     public class TowerIcon : MonoBehaviour
     {
-        [SerializeField] private Sprite icon;
 
         [SerializeField] private Image towerIcon;
         [SerializeField] private TextMeshProUGUI costText;
 
+        private Sprite _icon;
         private float _cost;
 
-        public void Construct(float cost)
+        public void Construct(TowerSO tower)
         {
-            _cost = cost;
+            //_icon = tower.Icon;
+            _cost = tower.BaseCost;
             Draw();
         }
         private void Draw()

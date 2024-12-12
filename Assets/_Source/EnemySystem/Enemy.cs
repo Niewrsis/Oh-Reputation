@@ -1,41 +1,93 @@
 using Core;
+using SceneSystem;
 using System;
 using UnityEngine;
 using WaveSystem;
+using WaypointSystem;
 
 namespace EnemySystem
 {
-    [RequireComponent(typeof(Rigidbody2D), typeof(EnemyMovement))]
     public class Enemy : MonoBehaviour
     {
-        [field: SerializeField] public string Name { get; private set; }
-        [field: SerializeField] public float MaxHealth { get; private set; }
-        [field: SerializeField] public float MovementSpeed { get; private set; }
-        [field: SerializeField] public float DeathReward { get; private set; }
-        public float CurrentHealth { get; private set; }
+        [SerializeField] private EnemySO enemy;
+
+        private Waypoint _waypoint;
+        private SpriteRenderer _spriteRenderer;
+        private Vector3 _lastPointPosition;
+        private int _currentWaypointIndex;
+        private float _moveSpeed;
+        private float _currentHealth;
 
         private void Start()
         {
-            CurrentHealth = MaxHealth;
+            _moveSpeed = enemy.MovementSpeed;
+            _currentHealth = enemy.MaxHealth;
+
+            _waypoint = FindObjectOfType<Waypoint>();
+            _spriteRenderer = GetComponent<SpriteRenderer>();
         }
-        public void TakeDamage(float damage)
+        private void Update()
         {
-            if (CurrentHealth <= damage)
+            Move();
+            Rotate();
+
+            if (CurrenPointPositionReached())
             {
-                Death();
+                UpdateCurrentPointIndex();
+            }
+        }
+        private void Move()
+        {
+            transform.position = Vector3.MoveTowards(transform.position, _waypoint.GetWaypointPosition(_currentWaypointIndex), _moveSpeed * Time.deltaTime);
+        }
+        private void Rotate()
+        {
+            if (_waypoint.GetWaypointPosition(_currentWaypointIndex).x > _lastPointPosition.x)
+            {
+                _spriteRenderer.flipX = true;
             }
             else
             {
-                CurrentHealth -= damage;
-                if (CurrentHealth <= damage)
+                _spriteRenderer.flipX = false;
+            }
+        }
+        private bool CurrenPointPositionReached()
+        {
+            float distanceToNextPointPosition = (transform.position - _waypoint.GetWaypointPosition(_currentWaypointIndex)).magnitude;
+            if (distanceToNextPointPosition < .1f)
+            {
+                _lastPointPosition = transform.position;
+                return true;
+            }
+            return false;
+        }
+        private void UpdateCurrentPointIndex()
+        {
+            int lastWaypointIndex = _waypoint.Points.Length - 1;
+            if (_currentWaypointIndex < lastWaypointIndex)
+            {
+                _currentWaypointIndex++;
+            }
+            else
+            {
+                LevelManager.Instance.RemoveBaseHP(_currentHealth);
+                Death();
+
+                if (LevelManager.Instance.GetCurrentBaseHP() <= 0)
                 {
-                    Death();
+                    LevelManager.Instance.SwitchCurrentState(GameState.Lose);
+                    EndGameScreen.OnGameEnd?.Invoke();
                 }
             }
         }
-        public void Death()
+        public void TakeDamage(float damage)
         {
-            LevelManager.Instance.AddCurrency(DeathReward);
+            _currentHealth -= damage;
+            if( _currentHealth <= 0 ) { Death(); }
+        }
+        private void Death()
+        {
+            LevelManager.Instance.AddCurrency(enemy.DeathReward);
             WaveManager.OnEnemyDeath?.Invoke();
             Destroy(gameObject);
         }

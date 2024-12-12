@@ -1,4 +1,4 @@
-using System.Collections;
+using EnemySystem;
 using UnityEngine;
 
 namespace WaveSystem
@@ -14,7 +14,7 @@ namespace WaveSystem
         public bool IsRandomized;
 
         [Header("Enemy Prefabs")]
-        public GameObject FixedEnemyPrefab;
-        public GameObject[] RandomizedEnemyPrefabs;
+        public EnemySO FixedEnemy;
+        public EnemySO[] RandomizedEnemies;
     }
 }

@@ -37,30 +37,30 @@ namespace WaveSystem
         {
             if (!GetCurrentWave().IsRandomized)
             {
-                StartCoroutine(SpawnEnemy(GetCurrentWave().FixedEnemyPrefab));
+                StartCoroutine(SpawnEnemy(GetCurrentWave().FixedEnemy));
             }
             else
             {
-                StartCoroutine(SpawnEnemy(GetCurrentWave().RandomizedEnemyPrefabs));
+                StartCoroutine(SpawnEnemy(GetCurrentWave().RandomizedEnemies));
             }
         }
-        private IEnumerator SpawnEnemy(GameObject enemy)
+        private IEnumerator SpawnEnemy(EnemySO enemy)
         {
             for (int i = 0; i < GetCurrentWave().EnemyCount; i++)
             {
-                Instantiate(enemy, waypoint.Points[0], Quaternion.identity);
+                Instantiate(enemy.Prefab, waypoint.Points[0], Quaternion.identity);
                 _enemiesAlive++;
                 yield return new WaitForSeconds(GetCurrentWave().DelayBetweenSpawn);
             }
             _currentWaveID++;
             StartCoroutine(WaitUntilNextWave());
         }
-        private IEnumerator SpawnEnemy(GameObject[] enemies)
+        private IEnumerator SpawnEnemy(EnemySO[] enemies)
         {
             for (int i = 0; i < GetCurrentWave().EnemyCount; i++)
             {
                 int rnd = UnityEngine.Random.Range(0, enemies.Length);
-                Instantiate(enemies[rnd], waypoint.Points[0], Quaternion.identity);
+                Instantiate(enemies[rnd].Prefab, waypoint.Points[0], Quaternion.identity);
                 _enemiesAlive++;
                 yield return new WaitForSeconds(GetCurrentWave().DelayBetweenSpawn);
             }

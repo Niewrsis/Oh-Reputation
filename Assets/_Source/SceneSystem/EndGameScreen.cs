@@ -18,6 +18,7 @@ namespace SceneSystem
 
         private float _totalReward;
 
+
         private void Start()
         {
             screenPreab.SetActive(false);
@@ -36,6 +37,8 @@ namespace SceneSystem
             {
                 _totalReward = Mathf.RoundToInt(UnityEngine.Random.Range(LevelManager.Instance.MinLevelReward, LevelManager.Instance.MaxLevelReward));
 
+                GameManager.main.LevelCompleted();
+
                 gameStateText.text = "Win";
                 rewardText.text = $"+{_totalReward.ToString()}";
 
@@ -50,6 +53,11 @@ namespace SceneSystem
             {
                 throw new Exception("Current state InGame");
             }
+        }
+        private void OnDisable()
+        {
+            Time.timeScale = 1f;
+            OnGameEnd -= EndGame;
         }
     }
 }

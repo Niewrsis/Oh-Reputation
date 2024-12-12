@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3274849490333965804}
   - component: {fileID: 3007134804345610412}
-  - component: {fileID: 3828846879056913990}
   - component: {fileID: 4089924355288560561}
   m_Layer: 11
   m_Name: BasicTower
@@ -87,26 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &3828846879056913990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3266826268993781146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 81bfd0774e28d9249b0a8a5df191e3f2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <Name>k__BackingField: Basic Tower
-  <Damage>k__BackingField: 40
-  <Range>k__BackingField: 3
-  <Cooldown>k__BackingField: 1
-  <Cost>k__BackingField: 100
-  <Type>k__BackingField: 0
-  <Icon>k__BackingField: {fileID: 0}
-  rangeObj: {fileID: 4588218896619772191}
 --- !u!114 &4089924355288560561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,10 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e6ce33147bd6b449f346996f366e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  projectile: {fileID: 2644752340784362644, guid: 6c3e214ed4c0a8543a028364dd9450d6, type: 3}
+  tower: {fileID: 11400000, guid: 56e66585cbc6db2489f3dd0f5512cf8c, type: 2}
+  rangeObj: {fileID: 4588218896619772191}
 --- !u!1 &4588218896619772191
 GameObject:
   m_ObjectHideFlags: 0

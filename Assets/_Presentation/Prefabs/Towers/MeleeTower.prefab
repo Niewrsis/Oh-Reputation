@@ -119,10 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e6ce33147bd6b449f346996f366e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  projectile: {fileID: 2644752340784362644, guid: 6c3e214ed4c0a8543a028364dd9450d6, type: 3}
+  tower: {fileID: 11400000, guid: 020f525c29e6f7f428a5fc0d9e4e8c2b, type: 2}
+  rangeObj: {fileID: 4588218896619772191}
 --- !u!1 &4588218896619772191
 GameObject:
   m_ObjectHideFlags: 0

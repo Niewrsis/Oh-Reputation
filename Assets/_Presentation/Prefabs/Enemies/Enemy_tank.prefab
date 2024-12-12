@@ -12,9 +12,7 @@ GameObject:
   - component: {fileID: 981875853949119459}
   - component: {fileID: 1012657722935415073}
   - component: {fileID: 3227594856782546327}
-  - component: {fileID: 6780771692668272739}
   - component: {fileID: 5882167039049434905}
-  - component: {fileID: 2409337640934619084}
   m_Layer: 6
   m_Name: Enemy_tank
   m_TagString: Untagged
@@ -125,7 +123,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.58, y: 4.66}
+    oldSize: {x: 0.458, y: 0.466}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -161,27 +159,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!95 &6780771692668272739
-Animator:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939369082449346266}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ac077f2790362e84d9da8fe3d92a7d21, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorStateOnDisable: 0
-  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &5882167039049434905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,19 +171,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19143910fff2bab479ba0697078d6f6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: Tank Enemy
-  <MaxHealth>k__BackingField: 250
-  <MovementSpeed>k__BackingField: 1
-  <DeathReward>k__BackingField: 100
---- !u!114 &2409337640934619084
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 939369082449346266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4198edb94e83b64381ee02c9fbca049, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  enemy: {fileID: 11400000, guid: 7d74c78be1290684bb164cf53045bd71, type: 2}

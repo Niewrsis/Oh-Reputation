@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3dae8f9d7356714ba69eea4ec926ef3, type: 3}
+  m_Name: RangeTower
+  m_EditorClassIdentifier: 
+  Name: Melee Tower
+  BaseDamage: 5
+  BaseRange: 2
+  BaseCooldown: 0.4
+  BaseCost: 150
+  MaximumCount: 1
+  IsAOE: 0
+  AOERange: 0
+  Upgrades:
+  - PlusDamage: 2
+    PlusRange: 0.5
+    PlusCooldown: -0.05
+    UpgradeCost: 200
+  - PlusDamage: 1
+    PlusRange: 0.5
+    PlusCooldown: -0.05
+    UpgradeCost: 250
+  Prefab: {fileID: 3266826268993781146, guid: 7718e22f649db704980f86b089ae053a, type: 3}
+  Icon: {fileID: 0}
+  Projectile: {fileID: 2644752340784362644, guid: 6c3e214ed4c0a8543a028364dd9450d6, type: 3}
+  EnemyLayer:
+    serializedVersion: 2
+    m_Bits: 64

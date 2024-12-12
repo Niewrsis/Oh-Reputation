@@ -14,15 +14,13 @@ namespace ShopMenu
         {
             _text = GetComponent<TextMeshProUGUI>();
 
-            GameManager.main.AddCurrency(100);
-
             CurrencyText();
 
             GameManager.main.OnCurrencyChanged += CurrencyText;
         }
         private void CurrencyText()
         {
-            _text.text = GameManager.main.Currency.ToString();
+            _text.text = GameManager.main.CurrencySystem.Currency.ToString();
         }
     }
 }

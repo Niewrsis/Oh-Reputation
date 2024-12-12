@@ -7,10 +7,11 @@ namespace TowerSystem
 {
     public class TowerShoot : MonoBehaviour
     {
-        [SerializeField] private LayerMask enemyLayer;
-        [SerializeField] private GameObject projectile;
+        [SerializeField] private TowerSO tower;
 
-        private Tower _tower;
+        [Header("References")]
+        [SerializeField] private GameObject rangeObj;
+
         private float _damage;
         private float _range;
         private float _cooldown;
@@ -20,11 +21,11 @@ namespace TowerSystem
 
         private void Start()
         {
-            _tower = GetComponent<Tower>();
+            _damage = tower.BaseDamage;
+            _range = tower.BaseRange;
+            _cooldown = tower.BaseCooldown;
 
-            _damage = _tower.Damage;
-            _range = _tower.Range;
-            _cooldown = _tower.Cooldown;
+            rangeObj.transform.localScale = new Vector2(_range * 2, _range * 2);
         }
         private void Update()
         {
@@ -45,7 +46,7 @@ namespace TowerSystem
         }
         private void FindTarget()
         {
-            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, _range, transform.forward, 0f, enemyLayer);
+            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, _range, transform.forward, 0f, tower.EnemyLayer);
 
             if(hits.Length > 0)
             {
@@ -58,7 +59,7 @@ namespace TowerSystem
         }
         private void Shoot()
         {
-            GameObject bulletObj = Instantiate(projectile, transform.position, Quaternion.identity);
+            GameObject bulletObj = Instantiate(tower.Projectile, transform.position, Quaternion.identity);
             Projectile bullet = bulletObj.GetComponent<Projectile>();
             bullet.SetTarget(_target, _damage);
         }
@@ -68,11 +69,6 @@ namespace TowerSystem
             Shoot();
             yield return new WaitForSeconds(_cooldown);
             _isShooting = false;
-        }
-        private void OnDrawGizmosSelected()
-        {
-            Handles.color = Color.cyan;
-            Handles.DrawWireDisc(transform.position, transform.forward, _range);
         }
     }
 }

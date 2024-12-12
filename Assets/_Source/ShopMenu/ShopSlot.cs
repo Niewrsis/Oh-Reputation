@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using TowerSystem;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,10 +10,7 @@ namespace ShopMenu
     [System.Serializable]
     public class ShopSlot
     {
-        public string Name;
-        public float Cost;
-        public Sprite Icon;
-        public GameObject TowerPrefab;
+        public TowerSO tower;
 
         public Image IconImage;
         public TextMeshProUGUI NameText;
@@ -20,9 +18,9 @@ namespace ShopMenu
 
         public void Set()
         {
-            IconImage.sprite = Icon;
-            NameText.text = Name;
-            CostText.text = Cost.ToString();
+            IconImage.sprite = tower.Icon;
+            NameText.text = tower.Name;
+            CostText.text = tower.BaseCost.ToString();
         }
     }
 }

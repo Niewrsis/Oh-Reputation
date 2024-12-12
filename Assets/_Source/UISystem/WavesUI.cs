@@ -15,7 +15,7 @@ namespace UISystem
 
         private WaveManager _waveManager;
 
-        private void Start()
+        private void Awake()
         {
             _waveManager = FindAnyObjectByType<WaveManager>();
 
