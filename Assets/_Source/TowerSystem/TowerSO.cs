@@ -33,7 +33,6 @@ namespace TowerSystem
 
         public bool TryAddOneTower()
         {
-            Debug.Log(CurrentCount);
             if(CurrentCount == MaximumCount)
             {
                 Debug.LogWarning("Already full towers");

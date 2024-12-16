@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3274849490333965804}
   - component: {fileID: 3007134804345610412}
   - component: {fileID: 4089924355288560561}
+  - component: {fileID: 3527231985931337625}
   m_Layer: 11
   m_Name: BasicTower
   m_TagString: Untagged
@@ -100,6 +101,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tower: {fileID: 11400000, guid: 56e66585cbc6db2489f3dd0f5512cf8c, type: 2}
   rangeObj: {fileID: 4588218896619772191}
+--- !u!61 &3527231985931337625
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266826268993781146}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.02, y: 1.526}
+    newSize: {x: 5.1, y: 7.63}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.02, y: 1.526}
+  m_EdgeRadius: 0
 --- !u!1 &4588218896619772191
 GameObject:
   m_ObjectHideFlags: 0

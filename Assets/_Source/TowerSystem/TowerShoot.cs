@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UpgradeSystem;
 
 namespace TowerSystem
 {
@@ -69,6 +70,10 @@ namespace TowerSystem
             Shoot();
             yield return new WaitForSeconds(_cooldown);
             _isShooting = false;
+        }
+        private void OnMouseDown()
+        {
+            FindObjectOfType<UpgradeUIHandler>().SetActiveMenu(tower);
         }
     }
 }
