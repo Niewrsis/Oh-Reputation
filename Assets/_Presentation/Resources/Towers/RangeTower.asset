@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: RangeTower
   m_EditorClassIdentifier: 
   Name: Melee Tower
-  BaseDamage: 5
-  BaseRange: 2
+  BaseDamage: 3
+  BaseRange: 3.5
   BaseCooldown: 0.4
   BaseCost: 150
-  MaximumCount: 1
+  MaximumCount: 2
   IsAOE: 0
   AOERange: 0
   Upgrades:

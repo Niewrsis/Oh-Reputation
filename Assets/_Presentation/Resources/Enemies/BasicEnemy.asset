@@ -15,5 +15,5 @@ MonoBehaviour:
   Name: Basic Enemy
   MaxHealth: 20
   MovementSpeed: 4
-  DeathReward: 50
+  DeathReward: 30
   Prefab: {fileID: 939369082449346266, guid: b694bed82a401f94d865742a6dee49eb, type: 3}
