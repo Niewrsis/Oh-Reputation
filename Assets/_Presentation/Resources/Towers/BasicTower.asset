@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BasicTower
   m_EditorClassIdentifier: 
   Name: Basic Tower
-  BaseDamage: 10
+  BaseDamage: 8
   BaseRange: 5
   BaseCooldown: 1
   BaseCost: 100
