@@ -8,9 +8,6 @@ namespace TowerSystem
 {
     public class TowerShoot : MonoBehaviour
     {
-        [Header("References")]
-        [SerializeField] private GameObject rangeObj;
-
         private TowerSO _towerSO;
         private Tower _tower;
         private Transform _target;
@@ -20,9 +17,6 @@ namespace TowerSystem
         {
             _tower = GetComponent<Tower>();
             _towerSO = _tower.TowerSO;
-
-            rangeObj.SetActive(false);
-            rangeObj.transform.localScale = new Vector2(_tower.Range * 2, _tower.Range * 2);
         }
         private void Update()
         {
@@ -66,10 +60,6 @@ namespace TowerSystem
             Shoot();
             yield return new WaitForSeconds(_tower.Cooldown);
             _isShooting = false;
-        }
-        private void OnMouseDown()
-        {
-            FindObjectOfType<UpgradeUIHandler>().SetActiveMenu(_towerSO, _tower, rangeObj);
         }
     }
 }
