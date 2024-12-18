@@ -37,7 +37,7 @@ namespace Inventory
                     }
                 }
             }
-            RemoveNulls(allTowers);
+            //RemoveNulls(allTowers);
         }
         private void RemoveNulls(List<TowerSO> towers)
         {

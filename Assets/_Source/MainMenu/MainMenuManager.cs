@@ -12,8 +12,6 @@ namespace MainMenu
 
         [Header("Buttons")]
         [SerializeField] private Button startButton;
-        [SerializeField] private Button inventoryButton;
-        [SerializeField] private Button shopButton;
         [SerializeField] private Button settingsButton;
         [SerializeField] private Button closeSettingsButton;
 
@@ -24,14 +22,10 @@ namespace MainMenu
             _isSettingsActive = false;
 
             startButton.onClick.AddListener(GoToLevelChooser);
-            //inventoryButton.onClick.AddListener(GoToInventoryMenu);
-            //shopButton.onClick.AddListener(GoToShopMenu);
             settingsButton.onClick.AddListener(OnSettings);
             closeSettingsButton.onClick.AddListener(OnSettings);
         }
         private void GoToLevelChooser() { SwitchScene.SwitchSceneTo(GlobalKeys.LEVEL_CHOOSING_SCENE_INDEX); }
-        private void GoToInventoryMenu() { SwitchScene.SwitchSceneTo(GlobalKeys.INVENTORY_MENU_SCENE_INDEX); }
-        private void GoToShopMenu() { SwitchScene.SwitchSceneTo(GlobalKeys.SHOP_MENU_SCENE_INDEX); }
         private void OnSettings()
         {
             if (_isSettingsActive)
@@ -40,8 +34,6 @@ namespace MainMenu
                 _isSettingsActive = false;
 
                 startButton.enabled = true;
-                inventoryButton.enabled = true;
-                shopButton.enabled = true;
                 settingsButton.enabled = true;
             }
             else
@@ -50,8 +42,6 @@ namespace MainMenu
                 _isSettingsActive = true;
 
                 startButton.enabled = false;
-                inventoryButton.enabled = false;
-                shopButton.enabled = false;
                 settingsButton.enabled = false;
             }
         }

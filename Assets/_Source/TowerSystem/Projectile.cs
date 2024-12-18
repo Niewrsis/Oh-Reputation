@@ -11,7 +11,7 @@ namespace TowerSystem
         [SerializeField] private float bulletSpeed;
         [SerializeField] private float lifeTime;
         
-        private Transform _target;
+        private Vector3 _target;
         private Rigidbody2D _rb;
 
         private float _damage;
@@ -19,20 +19,23 @@ namespace TowerSystem
         private void Start()
         {
             StartCoroutine(LifeTime());
-            _rb = GetComponent<Rigidbody2D>();
+            
         }
         private void FixedUpdate()
         {
-            if (!_target) return;
+            //if (!_target) return;
 
-            Vector2 direction = (_target.position - transform.position).normalized;
+            Vector2 direction = (_target - transform.position).normalized;
 
-            _rb.velocity = direction * bulletSpeed;
+            //_rb.velocity = direction * bulletSpeed;
         }
-        public void SetTarget(Transform target, float damage)
+        public void SetTarget(Vector3 target, float damage)
         {
+
+            _rb = GetComponent<Rigidbody2D>();
             _target = target;
             _damage = damage;
+            _rb.AddForce((_target - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse);
         }
         private void OnTriggerEnter2D(Collider2D other)
         {

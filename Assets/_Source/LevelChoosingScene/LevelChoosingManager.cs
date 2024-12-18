@@ -37,13 +37,9 @@ namespace LevelChoosingMenu
         [Header("Other stuff")]
         [SerializeField] private Button returnToMainMenu;
 
-        private int _levelIndex;
-
         private void Start()
         {
-            _levelIndex = GameManager.main.Levels;
-
-            switch (_levelIndex)
+            switch (GameManager.main.Levels)
             {
                 case 0:
                     Debug.Log("WHY TF YOU ARE ZERO??!!!?!?!!??!?!?!");

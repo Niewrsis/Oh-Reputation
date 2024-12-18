@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Basic Tower
   BaseDamage: 8
-  BaseRange: 5
-  BaseCooldown: 1
+  BaseRange: 6
+  BaseCooldown: 0.8
   BaseCost: 100
   MaximumCount: 5
   IsAOE: 0

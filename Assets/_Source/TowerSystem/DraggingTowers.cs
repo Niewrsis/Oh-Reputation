@@ -1,4 +1,4 @@
-using Core;
+    using Core;
 using System.Collections;
 using System.Collections.Generic;
 using TowerSystem.View;
@@ -43,7 +43,7 @@ namespace TowerSystem
             if (_towerObj != null) return;
 
             _towerObj = Instantiate(tower.Prefab, GetLocalPosition(), Quaternion.identity);
-            _towerObj.transform.SetParent(transform.parent.parent);
+            //_towerObj.transform.SetParent(transform.parent.parent);
             _isDragging = true;
         }
 
@@ -96,9 +96,11 @@ namespace TowerSystem
                 }
             }
         }
-        private Vector2 GetLocalPosition()
+        private Vector3 GetLocalPosition()
         {
-            return _canvasRect.InverseTransformPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            Vector3 vec = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            return new Vector3(vec.x, vec.y, 0);
+            //return _canvasRect.InverseTransformPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
         //TODO: Improve this system!
 

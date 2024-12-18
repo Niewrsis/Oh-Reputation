@@ -8,29 +8,25 @@ namespace TowerSystem
 {
     public class TowerShoot : MonoBehaviour
     {
-        [SerializeField] private TowerSO tower;
-
         [Header("References")]
         [SerializeField] private GameObject rangeObj;
 
-        private float _damage;
-        private float _range;
-        private float _cooldown;
-
+        private TowerSO _towerSO;
+        private Tower _tower;
         private Transform _target;
         private bool _isShooting;
 
         private void Start()
         {
-            _damage = tower.BaseDamage;
-            _range = tower.BaseRange;
-            _cooldown = tower.BaseCooldown;
+            _tower = GetComponent<Tower>();
+            _towerSO = _tower.TowerSO;
 
-            rangeObj.transform.localScale = new Vector2(_range * 2, _range * 2);
+            rangeObj.SetActive(false);
+            rangeObj.transform.localScale = new Vector2(_tower.Range * 2, _tower.Range * 2);
         }
         private void Update()
         {
-            if(_target == null)
+            if (_target == null)
             {
                 FindTarget();
                 return;
@@ -47,7 +43,7 @@ namespace TowerSystem
         }
         private void FindTarget()
         {
-            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, _range, transform.forward, 0f, tower.EnemyLayer);
+            RaycastHit2D[] hits = Physics2D.CircleCastAll(transform.position, _tower.Range, transform.forward, 0f, _towerSO.EnemyLayer);
 
             if(hits.Length > 0)
             {
@@ -56,24 +52,24 @@ namespace TowerSystem
         }
         private bool CheckTagetIsInRange()
         {
-            return Vector2.Distance(_target.position, transform.position) <= _range;
+            return Vector2.Distance(_target.position, transform.position) <= _tower.Range;
         }
         private void Shoot()
         {
-            GameObject bulletObj = Instantiate(tower.Projectile, transform.position, Quaternion.identity);
+            GameObject bulletObj = Instantiate(_towerSO.Projectile, transform.position, Quaternion.identity);
             Projectile bullet = bulletObj.GetComponent<Projectile>();
-            bullet.SetTarget(_target, _damage);
+            bullet.SetTarget(_target.position, _tower.Damage);
         }
         private IEnumerator Reloading()
         {
             _isShooting = true;
             Shoot();
-            yield return new WaitForSeconds(_cooldown);
+            yield return new WaitForSeconds(_tower.Cooldown);
             _isShooting = false;
         }
         private void OnMouseDown()
         {
-            FindObjectOfType<UpgradeUIHandler>().SetActiveMenu(tower);
+            FindObjectOfType<UpgradeUIHandler>().SetActiveMenu(_towerSO, _tower, rangeObj);
         }
     }
 }

@@ -95,6 +95,10 @@ namespace WaveSystem
         {
             return waves[_currentWaveID - 1];
         }
+        public int GetWavesCount()
+        {
+            return waves.Length;
+        }
         public int GetCurrentWaveID()
         {
             return _currentWaveID;

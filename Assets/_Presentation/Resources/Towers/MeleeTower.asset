@@ -13,23 +13,23 @@ MonoBehaviour:
   m_Name: MeleeTower
   m_EditorClassIdentifier: 
   Name: Melee Tower
-  BaseDamage: 17
-  BaseRange: 6
-  BaseCooldown: 1.8
-  BaseCost: 200
+  BaseDamage: 3
+  BaseRange: 3.5
+  BaseCooldown: 0.4
+  BaseCost: 150
   MaximumCount: 2
   IsAOE: 0
   AOERange: 0
   Upgrades:
-  - PlusDamage: 3
-    PlusRange: 1
-    PlusCooldown: -0.1
-    UpgradeCost: 300
   - PlusDamage: 2
-    PlusRange: 1
-    PlusCooldown: -0.2
-    UpgradeCost: 450
-  Prefab: {fileID: 3266826268993781146, guid: 25efcd15e9c6a9346aa7f9ce54ac3572, type: 3}
+    PlusRange: 0.5
+    PlusCooldown: -0.05
+    UpgradeCost: 200
+  - PlusDamage: 1
+    PlusRange: 0.5
+    PlusCooldown: -0.05
+    UpgradeCost: 250
+  Prefab: {fileID: 3266826268993781146, guid: 7718e22f649db704980f86b089ae053a, type: 3}
   Icon: {fileID: 0}
   Projectile: {fileID: 2644752340784362644, guid: 6c3e214ed4c0a8543a028364dd9450d6, type: 3}
   EnemyLayer:

@@ -23,7 +23,7 @@ namespace UISystem
         }
         private void UpdateWaveText()
         {
-            waveText.text = $"Wave {_waveManager.GetCurrentWaveID()}";
+            waveText.text = $"{_waveManager.GetCurrentWaveID()}/{_waveManager.GetWavesCount()}";
         }
     }
 }
