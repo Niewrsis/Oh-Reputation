@@ -19,7 +19,7 @@ namespace TowerSystem
         {
             _sr = GetComponent<SpriteRenderer>();
             _tower = GetComponent<Tower>();
-            _animator = GetComponent<Animator>();
+            //_animator = GetComponent<Animator>();
             _towerSO = _tower.TowerSO;
         }
         private void Update()
@@ -57,7 +57,7 @@ namespace TowerSystem
         {
             GameObject bulletObj = Instantiate(_towerSO.Projectile, transform.position, Quaternion.identity);
             Projectile bullet = bulletObj.GetComponent<Projectile>();
-            bullet.SetTarget(_target.position, _tower.Damage);
+            //bullet.SetTarget(_target.position, _tower.Damage);
         }
         private IEnumerator Reloading()
         {
