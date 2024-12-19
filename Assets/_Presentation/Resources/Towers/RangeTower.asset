@@ -21,11 +21,11 @@ MonoBehaviour:
   IsAOE: 0
   AOERange: 0
   Upgrades:
-  - PlusDamage: 2
-    PlusRange: 1
+  - PlusDamage: 1.5
+    PlusRange: 0.5
     PlusCooldown: -0.1
     UpgradeCost: 300
-  - PlusDamage: 3
+  - PlusDamage: 2.5
     PlusRange: 1
     PlusCooldown: -0.2
     UpgradeCost: 450
