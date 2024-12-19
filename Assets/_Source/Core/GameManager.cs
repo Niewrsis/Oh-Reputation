@@ -32,6 +32,21 @@ namespace Core
             {
                 ResetLevels();
             }
+
+            if(Input.GetKeyDown(KeyCode.F1))
+            {
+                if(Input.GetKeyDown(KeyCode.Alpha2))
+                {
+                    ResetToCurrentLevel(2);
+                }
+            }
+            if (Input.GetKeyDown(KeyCode.F1))
+            {
+                if(Input.GetKeyDown(KeyCode.Alpha3))
+                {
+                    ResetToCurrentLevel(3);
+                }
+            }
         }
         private void LoadLevels()
         {
@@ -118,6 +133,12 @@ namespace Core
         public void ResetLevels()
         {
             Levels = 1;
+            PlayerPrefs.SetInt(GlobalKeys.LEVELS_PP_STRING, Levels);
+            SwitchScene.SwitchSceneTo(GlobalKeys.MAIN_MENU_SCENE_INDEX);
+        }
+        private void ResetToCurrentLevel(int level)
+        {
+            Levels = level;
             PlayerPrefs.SetInt(GlobalKeys.LEVELS_PP_STRING, Levels);
             SwitchScene.SwitchSceneTo(GlobalKeys.MAIN_MENU_SCENE_INDEX);
         }
