@@ -1193,16 +1193,32 @@ PrefabInstance:
       value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8925700678463846640, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
+      propertyPath: waves.Array.data[0].EnemyCount
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925700678463846640, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
       propertyPath: waves.Array.data[0].FixedEnemy
       value: 
       objectReference: {fileID: 11400000, guid: 9530f05fa4a409d499152745aa91daca, type: 2}
+    - target: {fileID: 8925700678463846640, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
+      propertyPath: waves.Array.data[1].EnemyCount
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 8925700678463846640, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
       propertyPath: waves.Array.data[1].FixedEnemy
       value: 
       objectReference: {fileID: 11400000, guid: 9530f05fa4a409d499152745aa91daca, type: 2}
     - target: {fileID: 8925700678463846640, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
+      propertyPath: waves.Array.data[2].EnemyCount
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925700678463846640, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
       propertyPath: waves.Array.data[2].FixedEnemy
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925700678463846640, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
+      propertyPath: waves.Array.data[3].EnemyCount
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 8925700678463846640, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
       propertyPath: waves.Array.data[5].EnemyCount
@@ -1210,7 +1226,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8925700678463846640, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
       propertyPath: waves.Array.data[6].EnemyCount
-      value: 15
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 8925700678463846640, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
       propertyPath: waves.Array.data[5].IsRandomized
