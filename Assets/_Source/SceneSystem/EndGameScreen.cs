@@ -13,7 +13,6 @@ namespace SceneSystem
         public static UnityAction OnGameEnd;
 
         [SerializeField] private GameObject screenPreab;
-        [SerializeField] private TextMeshProUGUI gameStateText;
 
         private void Start()
         {
@@ -25,26 +24,19 @@ namespace SceneSystem
         {
             screenPreab.SetActive(true);
             EndGameState(LevelManager.Instance.CurrentGameState);
-            Time.timeScale = 0f;
+            StartCoroutine(Cor());
         }
         private void EndGameState(GameState gameState)
         {
             if(gameState == GameState.Win)
             {
                 GameManager.main.LevelCompleted();
-
-                gameStateText.text = "Win";
-            }
-            else if(gameState == GameState.Lose)
-            {
-                gameStateText.text = "Lose";
-            }
-            else
-            {
-                throw new Exception("Current state InGame");
             }
         }
-        
+        private IEnumerator Cor()
+        {
+            yield return new WaitForSeconds(1);
+        }
         private void OnDisable()
         {
             Time.timeScale = 1f;
