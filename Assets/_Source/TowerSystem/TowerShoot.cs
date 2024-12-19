@@ -63,7 +63,7 @@ namespace TowerSystem
         {
             _isShooting = true;
             Shoot();
-            _animator.SetTrigger("Attack");
+            //_animator.SetTrigger("Attack");
             yield return new WaitForSeconds(_tower.Cooldown);
             _isShooting = false;
         }
