@@ -24,7 +24,6 @@ namespace SceneSystem
         {
             screenPreab.SetActive(true);
             EndGameState(LevelManager.Instance.CurrentGameState);
-            StartCoroutine(Cor());
         }
         private void EndGameState(GameState gameState)
         {
@@ -32,10 +31,6 @@ namespace SceneSystem
             {
                 GameManager.main.LevelCompleted();
             }
-        }
-        private IEnumerator Cor()
-        {
-            yield return new WaitForSeconds(1);
         }
         private void OnDisable()
         {

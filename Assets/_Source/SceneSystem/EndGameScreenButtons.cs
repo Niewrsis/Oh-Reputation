@@ -8,13 +8,15 @@ namespace SceneSystem
 {
     public class EndGameScreenButtons : MonoBehaviour
     {
+        [SerializeField] private Animator animator;
+
+        [Header("Buttons")]
         [SerializeField] private Button returnButton;
         [SerializeField] private Button restartButton;
 
+        [Header("Objects")]
         [SerializeField] private GameObject returnButtonObj;
         [SerializeField] private GameObject restartButtonObj;
-
-        [SerializeField] private Animator animator;
 
         private void Start()
         {
@@ -26,15 +28,24 @@ namespace SceneSystem
         }
         private void OnEnable()
         {
-            StartCoroutine(LoseAnim());
+            StartCoroutine(EndAnim());
         }
-        private IEnumerator LoseAnim()
+        private IEnumerator EndAnim()
         {
             Time.timeScale = 1f;
             yield return new WaitForSeconds(1);
-            animator.SetTrigger("Start");
+            if (LevelManager.Instance.CurrentGameState == GameState.Lose)
+            {
+                animator.SetTrigger("Lose");
+            }
+            else
+            {
+                animator.SetTrigger("Win");
+            }
             returnButtonObj.SetActive(true);
             restartButtonObj.SetActive(true);
+
+            
             Time.timeScale = 0f;
         }
         private void Return()

@@ -454,8 +454,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22ec4589f18c2104b8d38ca34994b020, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 7261856948961097236}
   returnButton: {fileID: 291365767035638024}
   restartButton: {fileID: 4888768365753123432}
   returnButtonObj: {fileID: 6207754025159642970}
   restartButtonObj: {fileID: 4810732894226604546}
-  animator: {fileID: 7261856948961097236}
+  image: {fileID: 6569817276213219612}
+  winSprite: {fileID: 21300000, guid: 2d9e7c20ba8ee89488aecf550ad45b05, type: 3}
+  loseSprite: {fileID: 21300000, guid: f6c1b32e935f81247b29df5b8792ecfd, type: 3}
