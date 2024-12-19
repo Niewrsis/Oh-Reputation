@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1012657722935415073}
   - component: {fileID: 3227594856782546327}
   - component: {fileID: 5882167039049434905}
+  - component: {fileID: 7587163593524135458}
   m_Layer: 6
   m_Name: Enemy_tank
   m_TagString: Untagged
@@ -119,7 +120,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.00068371, y: -0.056747876}
+  m_Offset: {x: -0.016481258, y: -0.009934321}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -130,7 +131,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2748752, y: 0.20650424}
+  m_Size: {x: 0.34977686, y: 0.3719121}
   m_EdgeRadius: 0
 --- !u!50 &3227594856782546327
 Rigidbody2D:
@@ -172,3 +173,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 11400000, guid: 7d74c78be1290684bb164cf53045bd71, type: 2}
+--- !u!95 &7587163593524135458
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939369082449346266}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 75df39db4a6a076459b63421277d33c6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
