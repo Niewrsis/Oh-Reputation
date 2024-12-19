@@ -29,7 +29,7 @@ MonoBehaviour:
     PlusRange: 1
     PlusCooldown: -0.2
     UpgradeCost: 450
-  Prefab: {fileID: 3266826268993781146, guid: 25efcd15e9c6a9346aa7f9ce54ac3572, type: 3}
+  Prefab: {fileID: 3266826268993781146, guid: 7718e22f649db704980f86b089ae053a, type: 3}
   Icon: {fileID: 0}
   Projectile: {fileID: 2644752340784362644, guid: e11325809e16c364e8fb3e7c9302bf99, type: 3}
   EnemyLayer:
