@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3007134804345610412}
   - component: {fileID: 4089924355288560561}
   - component: {fileID: 6190459194689574628}
+  - component: {fileID: 3159433189191687694}
   - component: {fileID: 2997507215103152597}
   m_Layer: 11
   m_Name: RangeTower
@@ -100,7 +101,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8e6ce33147bd6b449f346996f366e0f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangeObj: {fileID: 4588218896619772191}
 --- !u!114 &6190459194689574628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -114,6 +114,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   TowerSO: {fileID: 11400000, guid: 020f525c29e6f7f428a5fc0d9e4e8c2b, type: 2}
+--- !u!114 &3159433189191687694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3266826268993781146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8146cca1911e49849ad4c4112e0576b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeObj: {fileID: 4588218896619772191}
 --- !u!61 &2997507215103152597
 BoxCollider2D:
   m_ObjectHideFlags: 0

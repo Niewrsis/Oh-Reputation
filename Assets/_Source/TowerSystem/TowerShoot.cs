@@ -12,14 +12,19 @@ namespace TowerSystem
         private Tower _tower;
         private Transform _target;
         private bool _isShooting;
+        private SpriteRenderer _sr;
+        private Animator _animator;
 
         private void Start()
         {
+            _sr = GetComponent<SpriteRenderer>();
             _tower = GetComponent<Tower>();
+            _animator = GetComponent<Animator>();
             _towerSO = _tower.TowerSO;
         }
         private void Update()
         {
+            Rotate();
             if (_target == null)
             {
                 FindTarget();
@@ -58,8 +63,22 @@ namespace TowerSystem
         {
             _isShooting = true;
             Shoot();
+            _animator.SetTrigger("Attack");
             yield return new WaitForSeconds(_tower.Cooldown);
             _isShooting = false;
+        }
+        private void Rotate()
+        {
+            if(_target == null) return;
+
+            if(_target.position.x - transform.position.x > 0)
+            {
+                _sr.flipX = true;
+            }
+            else
+            {
+                _sr.flipX = false;
+            }
         }
     }
 }
