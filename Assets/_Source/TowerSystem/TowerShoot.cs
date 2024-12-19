@@ -19,7 +19,7 @@ namespace TowerSystem
         {
             _sr = GetComponent<SpriteRenderer>();
             _tower = GetComponent<Tower>();
-            _animator = GetComponent<Animator>();
+            //_animator = GetComponent<Animator>();
             _towerSO = _tower.TowerSO;
         }
         private void Update()
@@ -63,7 +63,7 @@ namespace TowerSystem
         {
             _isShooting = true;
             Shoot();
-            _animator.SetTrigger("Attack");
+            //_animator.SetTrigger("Attack");
             yield return new WaitForSeconds(_tower.Cooldown);
             _isShooting = false;
         }
