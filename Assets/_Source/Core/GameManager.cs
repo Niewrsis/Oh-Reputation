@@ -100,31 +100,15 @@ namespace Core
         }
         public void LevelCompleted()
         {
-            switch (PlayerPrefs.GetInt(GlobalKeys.LEVELS_PP_STRING))
-            {
-                case 1:
-                    {
-                        Levels = 2;
-                        PlayerPrefs.SetInt(GlobalKeys.LEVELS_PP_STRING, Levels);
-                        break;
-                    }
-                case 2:
-                    {
-                        Levels = 3;
-                        PlayerPrefs.SetInt(GlobalKeys.LEVELS_PP_STRING, Levels);
-                        break;
-                    }
-                case 3:
-                    {
-                        Levels = 4;
-                        PlayerPrefs.SetInt(GlobalKeys.LEVELS_PP_STRING, Levels);
-                        break;
-                    }
-                default:
-                    {
-                        throw new Exception("Comlete level error!");
-                    }
-            }
+            if (Levels == 1) { ChangeLevel(2); return; }
+            if (Levels == 2) { ChangeLevel(3); return; }
+            if (Levels == 3) { ChangeLevel(4); return; }
+            if (Levels <= 4) Debug.LogWarning("That's all");
+        }
+        private void ChangeLevel(int level)
+        {
+            Levels = level;
+            PlayerPrefs.SetInt(GlobalKeys.LEVELS_PP_STRING, Levels);
         }
         public List<GameObject> GetAvalibleTowers()
         {
