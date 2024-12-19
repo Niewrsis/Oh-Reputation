@@ -1824,20 +1824,20 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5618565546446880405, guid: b087c50688d7bf846b5339c87878a498, type: 3}
       propertyPath: allTowers.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5618565546446880405, guid: b087c50688d7bf846b5339c87878a498, type: 3}
       propertyPath: allTowers.Array.data[0]
       value: 
-      objectReference: {fileID: 3266826268993781146, guid: 1bb0befba49fa8d47ad74d5eb8abee00, type: 3}
+      objectReference: {fileID: 896784219182830145, guid: 98891533946786141a2d5466a26bd95a, type: 3}
     - target: {fileID: 5618565546446880405, guid: b087c50688d7bf846b5339c87878a498, type: 3}
       propertyPath: allTowers.Array.data[1]
       value: 
-      objectReference: {fileID: 3266826268993781146, guid: 1bb0befba49fa8d47ad74d5eb8abee00, type: 3}
+      objectReference: {fileID: 3909125472159887274, guid: 5d54865c7120b704384ba723910f1651, type: 3}
     - target: {fileID: 5618565546446880405, guid: b087c50688d7bf846b5339c87878a498, type: 3}
       propertyPath: allTowers.Array.data[2]
       value: 
-      objectReference: {fileID: 3266826268993781146, guid: 1bb0befba49fa8d47ad74d5eb8abee00, type: 3}
+      objectReference: {fileID: 6608482621214053669, guid: 898b1827d15572d4aba830d11c159658, type: 3}
     - target: {fileID: 6784217522009731832, guid: b087c50688d7bf846b5339c87878a498, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

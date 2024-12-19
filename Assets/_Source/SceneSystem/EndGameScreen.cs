@@ -14,10 +14,6 @@ namespace SceneSystem
 
         [SerializeField] private GameObject screenPreab;
         [SerializeField] private TextMeshProUGUI gameStateText;
-        [SerializeField] private TextMeshProUGUI rewardText;
-
-        private float _totalReward;
-
 
         private void Start()
         {
@@ -35,25 +31,20 @@ namespace SceneSystem
         {
             if(gameState == GameState.Win)
             {
-                _totalReward = Mathf.RoundToInt(UnityEngine.Random.Range(LevelManager.Instance.MinLevelReward, LevelManager.Instance.MaxLevelReward));
-
                 GameManager.main.LevelCompleted();
 
                 gameStateText.text = "Win";
-                rewardText.text = $"+{_totalReward.ToString()}";
-
-                //TODO: Make logic for adding money to global wallet
             }
             else if(gameState == GameState.Lose)
             {
                 gameStateText.text = "Lose";
-                rewardText.text = "+0";
             }
             else
             {
                 throw new Exception("Current state InGame");
             }
         }
+        
         private void OnDisable()
         {
             Time.timeScale = 1f;

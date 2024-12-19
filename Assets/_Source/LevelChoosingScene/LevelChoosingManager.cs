@@ -42,7 +42,7 @@ namespace LevelChoosingMenu
             switch (GameManager.main.Levels)
             {
                 case 0:
-                    Debug.Log("WHY TF YOU ARE ZERO??!!!?!?!!??!?!?!");
+                    Debug.Log("WHY TF THIS BULLSHIT ARE ZERO??!!!?!?!!??!?!?! HELL NAH, I WON'T TOUCH THIS SHIT AGAIN");
                     break;
                 case 1:
                     firstLevel.enabled = true;

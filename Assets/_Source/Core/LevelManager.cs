@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Core
@@ -6,9 +7,8 @@ namespace Core
     {
         public static LevelManager Instance;
 
+        [SerializeField] private Transform parentForTowers;
         [field: SerializeField] public float MaxBaseHealth { get; private set; }
-        [field: SerializeField] public float MaxLevelReward { get; private set; }
-        [field: SerializeField] public float MinLevelReward { get; private set; }
 
         [SerializeField] private float startCurrency;
 
@@ -23,6 +23,16 @@ namespace Core
             _currentBaseHP = MaxBaseHealth;
             CurrentGameState = GameState.InGame;
             _currency = startCurrency;
+        }
+        private void Start()
+        {
+            GameManager.main.LoadTowers();
+            List<GameObject> towerList = GameManager.main.GetAvalibleTowers();
+
+            for(int i = 0; i < towerList.Count; i++)
+            {
+                Instantiate(towerList[i], parentForTowers);
+            }
         }
         public void AddCurrency(float currency) { _currency += currency; }
         public void RemoveCurrency(float currency) { _currency -= currency; }

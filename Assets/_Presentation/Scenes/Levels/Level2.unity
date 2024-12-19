@@ -699,7 +699,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6337633925237907725, guid: 4327f44ca7959d1449c02effeff4056a, type: 3}
+    - {fileID: 4799313602356233107, guid: 4327f44ca7959d1449c02effeff4056a, type: 3}
+    - {fileID: 6631314083538705948, guid: 4327f44ca7959d1449c02effeff4056a, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4327f44ca7959d1449c02effeff4056a, type: 3}
@@ -725,6 +728,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &1211824804 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 8442365421119804256, guid: 4327f44ca7959d1449c02effeff4056a, type: 3}
+  m_PrefabInstance: {fileID: 1211824801}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1321826117 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8958620686443864824, guid: 7ca8d0903496b3c459dcda4eb5065bd6, type: 3}
@@ -1097,7 +1105,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screenPreab: {fileID: 1321826117}
   gameStateText: {fileID: 1391455259}
-  rewardText: {fileID: 668780511}
 --- !u!1001 &7921503427958731367
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1106,6 +1113,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3857705553778114185, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
+      propertyPath: parentForTowers
+      value: 
+      objectReference: {fileID: 1211824804}
     - target: {fileID: 3857705553778114185, guid: fc18f7ef83a5d524d881b1a80971038f, type: 3}
       propertyPath: <MaxLevelReward>k__BackingField
       value: 150

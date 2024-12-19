@@ -1,11 +1,7 @@
-    using Core;
-using System.Collections;
-using System.Collections.Generic;
+using Core;
 using TowerSystem.View;
-using Unity.Profiling;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 namespace TowerSystem
 {
@@ -17,7 +13,6 @@ namespace TowerSystem
 
         private GameObject _towerObj;
         private bool _isDragging;
-        private RectTransform _canvasRect;
         private TowerIcon _towerIcon;
 
         void Start()
@@ -28,8 +23,6 @@ namespace TowerSystem
                 return;
             }
             tower.CurrentCount = 0;
-
-            _canvasRect = FindAnyObjectByType<Canvas>().GetComponent<RectTransform>();
 
             _towerIcon = GetComponent<TowerIcon>();
 
@@ -43,7 +36,6 @@ namespace TowerSystem
             if (_towerObj != null) return;
 
             _towerObj = Instantiate(tower.Prefab, GetLocalPosition(), Quaternion.identity);
-            //_towerObj.transform.SetParent(transform.parent.parent);
             _isDragging = true;
         }
 
@@ -73,13 +65,6 @@ namespace TowerSystem
                 LevelManager.Instance.RemoveCurrency(tower.BaseCost);
             }
 
-            //if(CheckGroundLayer() == false)
-            //{
-            //    Debug.LogWarning("You cannot place it here");
-            //}
-            //else
-            //{
-
             Destroy(_towerObj);
             _towerObj = null;
             _isDragging = false;
@@ -100,9 +85,7 @@ namespace TowerSystem
         {
             Vector3 vec = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             return new Vector3(vec.x, vec.y, 0);
-            //return _canvasRect.InverseTransformPoint(Camera.main.ScreenToWorldPoint(Input.mousePosition));
         }
-        //TODO: Improve this system!
 
         private bool CheckGroundLayer()
         {
