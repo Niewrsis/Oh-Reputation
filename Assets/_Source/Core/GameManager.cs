@@ -57,7 +57,7 @@ namespace Core
             }
             else
             {
-                PlayerPrefs.GetInt(GlobalKeys.LEVELS_PP_STRING, Levels);
+                Levels = PlayerPrefs.GetInt(GlobalKeys.LEVELS_PP_STRING);
             }
         }
         public void LoadTowers()

@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Basic Enemy
   MaxHealth: 10
-  MovementSpeed: 6
+  MovementSpeed: 5
   DeathReward: 50
   Prefab: {fileID: 939369082449346266, guid: 4076583043883ae4087f724a4d629b94, type: 3}
