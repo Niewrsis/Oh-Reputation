@@ -8,6 +8,8 @@ namespace TowerSystem
 {
     public class TowerShoot : MonoBehaviour
     {
+        [SerializeField] private bool _isAoE;
+
         private TowerSO _towerSO;
         private Tower _tower;
         private Transform _target;
@@ -59,10 +61,23 @@ namespace TowerSystem
             Projectile bullet = bulletObj.GetComponent<Projectile>();
             bullet.SetTarget(_target.position, _tower.Damage);
         }
+        private void ShootAoE()
+        {
+            GameObject bulletObj = Instantiate(_towerSO.Projectile, transform.position, Quaternion.identity);
+            Projectile bullet = bulletObj.GetComponent<Projectile>();
+            bullet.SetTargetAOE(_tower.Damage, _tower.Range);
+        }
         private IEnumerator Reloading()
         {
             _isShooting = true;
-            Shoot();
+            if(!_isAoE)
+            {
+                Shoot();
+            }
+            else
+            {
+                ShootAoE();
+            }
             //_animator.SetTrigger("Attack");
             yield return new WaitForSeconds(_tower.Cooldown);
             _isShooting = false;

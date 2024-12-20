@@ -1,7 +1,9 @@
 using Core;
 using SceneSystem;
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.UIElements;
 using WaveSystem;
 using WaypointSystem;
 
@@ -18,6 +20,9 @@ namespace EnemySystem
         private float _moveSpeed;
         private float _currentHealth;
 
+        private float _baseMoveSpeed;
+        private bool _isSlowed;
+
         private void Start()
         {
             _moveSpeed = enemy.MovementSpeed;
@@ -25,6 +30,8 @@ namespace EnemySystem
 
             _waypoint = FindObjectOfType<Waypoint>();
             _spriteRenderer = GetComponent<SpriteRenderer>();
+
+            _baseMoveSpeed = enemy.MovementSpeed;
         }
         private void Update()
         {
@@ -90,6 +97,25 @@ namespace EnemySystem
             LevelManager.Instance.AddCurrency(enemy.DeathReward);
             WaveManager.OnEnemyDeath?.Invoke();
             Destroy(gameObject);
+        }
+        public void ReduceMovespeed(float reducedSpeed)
+        {
+            StartCoroutine(ReduceMovespeedCorutine(reducedSpeed));
+        }
+        private IEnumerator ReduceMovespeedCorutine(float reducedSpeed)
+        {
+            if(_isSlowed)
+            {
+                StopCoroutine(ReduceMovespeedCorutine(reducedSpeed));
+                _isSlowed = false;
+                StartCoroutine(ReduceMovespeedCorutine(reducedSpeed));
+                yield return null;
+            }
+            _isSlowed = true;
+            _moveSpeed = reducedSpeed;
+            yield return new WaitForSeconds(3);
+            _moveSpeed = _baseMoveSpeed;
+            _isSlowed = false;
         }
     }
 }

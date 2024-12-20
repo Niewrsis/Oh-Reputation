@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a3dae8f9d7356714ba69eea4ec926ef3, type: 3}
-  m_Name: BasicTower
+  m_Name: SlowmoTower
   m_EditorClassIdentifier: 
   Name: Butcher
-  BaseDamage: 8
-  BaseRange: 4.5
-  BaseCooldown: 0.8
-  BaseCost: 100
+  BaseDamage: 2
+  BaseRange: 3
+  BaseCooldown: 1.5
+  BaseCost: 250
   MaximumCount: 4
   IsAOE: 0
   AOERange: 0
@@ -29,9 +29,9 @@ MonoBehaviour:
     PlusRange: 1
     PlusCooldown: -0.2
     UpgradeCost: 350
-  Prefab: {fileID: 3266826268993781146, guid: 1bb0befba49fa8d47ad74d5eb8abee00, type: 3}
+  Prefab: {fileID: 3266826268993781146, guid: a0cf5d942893e2a479c49804825171f1, type: 3}
   Icon: {fileID: 0}
-  Projectile: {fileID: 2644752340784362644, guid: 6c3e214ed4c0a8543a028364dd9450d6, type: 3}
+  Projectile: {fileID: 2644752340784362644, guid: e11325809e16c364e8fb3e7c9302bf99, type: 3}
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 64

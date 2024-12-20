@@ -16,6 +16,8 @@ namespace TowerSystem
 
         private float _damage;
 
+        private bool _isSlowing;
+
         private void Start()
         {
             StartCoroutine(LifeTime());
@@ -37,9 +39,23 @@ namespace TowerSystem
             _damage = damage;
             _rb.AddForce((_target - transform.position).normalized * bulletSpeed, ForceMode2D.Impulse);
         }
+        public void SetTargetAOE(float damage, float range)
+        {
+            _damage = damage;
+            gameObject.transform.localScale = new Vector2(range * 2, range * 2);
+            _isSlowing = true;
+        }
         private void OnTriggerEnter2D(Collider2D other)
         {
-            other.GetComponent<Enemy>().TakeDamage(_damage);
+            if(!_isSlowing)
+            {
+                other.GetComponent<Enemy>().TakeDamage(_damage);
+            }
+            else
+            {
+                other.GetComponent<Enemy>().TakeDamage(_damage);
+                other.GetComponent<Enemy>().ReduceMovespeed(1);
+            }
             Destroy(gameObject);
         }
         private IEnumerator LifeTime()
