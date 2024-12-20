@@ -56,7 +56,16 @@ namespace TowerSystem
                 other.GetComponent<Enemy>().TakeDamage(_damage);
                 other.GetComponent<Enemy>().ReduceMovespeed(1);
             }
+            SpriteRenderer sr = other.GetComponent<SpriteRenderer>();
+            SR(sr);
             Destroy(gameObject);
+        }
+        private IEnumerator SR(SpriteRenderer sr)
+        {
+            Color baseColor = sr.color;
+            sr.color = Color.red;
+            yield return new WaitForSeconds(.2f);
+            sr.color = baseColor;
         }
         private IEnumerator LifeTime()
         {

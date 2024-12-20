@@ -31,7 +31,7 @@ MonoBehaviour:
     UpgradeCost: 350
   Prefab: {fileID: 3266826268993781146, guid: a0cf5d942893e2a479c49804825171f1, type: 3}
   Icon: {fileID: 0}
-  Projectile: {fileID: 2644752340784362644, guid: e11325809e16c364e8fb3e7c9302bf99, type: 3}
+  Projectile: {fileID: 2644752340784362644, guid: f576d11ec59eedb42ab45d62c16d23e6, type: 3}
   EnemyLayer:
     serializedVersion: 2
     m_Bits: 64

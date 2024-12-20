@@ -1,0 +1,677 @@
+fileFormatVersion: 2
+guid: 7554758af97a079408707e1e7e10a21f
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: IceSpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1734
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a39e2a3410c62408dee0c7c50c42ce
+      internalID: 1309783503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 1734
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e870c00daeb38f43b4d8cc47a0e42b4
+      internalID: -1934740171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 1734
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e521c05f7c3b1864da1b4c7e26792e50
+      internalID: -1461944638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 1734
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2772d8c40ea45b64b9e48fd4651a81bc
+      internalID: 756408243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 1734
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 908d05d5b4bb3284397ca4912858383f
+      internalID: 234218675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 4110
+        y: 1734
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8df41be22f7d014b9fdf4c9958b0593
+      internalID: 2083169482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 4932
+        y: 1734
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d1e5ac365cfb1a4a90713dd822153cb
+      internalID: 319796086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 5754
+        y: 1734
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b719db98823df914e80cf1d94420cc94
+      internalID: -1963316315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 6576
+        y: 1734
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd9fe6eb64cbf64e90b38b660e0e61d
+      internalID: 1736502527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 7398
+        y: 1734
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 471d556e4d014f04c8cc81afeac03fae
+      internalID: 1904515170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 867
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf18ac4efe1dcda429ad0597467685b4
+      internalID: -1384858242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 867
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf35f0049f42cb458756ab092a15ee7
+      internalID: -1623600958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 867
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a2490d5aa12339498e9f6392b186c07
+      internalID: -1554388686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 867
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77e8cb9508d9ddb42ab58b071a166d08
+      internalID: 1513702120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_14
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 867
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd8240260ad9bb94aaf386b657efe0e9
+      internalID: -1573631914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_15
+      rect:
+        serializedVersion: 2
+        x: 4110
+        y: 867
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29da74be7fb851f49a73a46cbe88cb9e
+      internalID: -393372037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_16
+      rect:
+        serializedVersion: 2
+        x: 4932
+        y: 867
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffcc8ff21f5d87a408fe5617b7a4ee7a
+      internalID: 1216609833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_17
+      rect:
+        serializedVersion: 2
+        x: 5754
+        y: 867
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f70dd73fee247419bc5e5e090e3723
+      internalID: -338941621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_18
+      rect:
+        serializedVersion: 2
+        x: 6576
+        y: 867
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b35a8d62423510544a07e934a6ba082f
+      internalID: -231912811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_19
+      rect:
+        serializedVersion: 2
+        x: 7398
+        y: 867
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dddd6c73a9b4a4e49bd4db382eecd108
+      internalID: -2138961404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 698cc27c5af154d4f9321d0ab3408423
+      internalID: 554856539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_21
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 0
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c04b6a6a59ac66428dfb82883b9eec7
+      internalID: 327110288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_22
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 0
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f9eb3712bd037b4fb2fc85e2e7a2805
+      internalID: 1004822830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_23
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 0
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b3fcae7d9c7c845b0396f5465b363b
+      internalID: -1816086155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: IceSpriteSheet_24
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 0
+        width: 822
+        height: 867
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af449252dd8ade640b64bfbdadf3fe4e
+      internalID: -922552531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      IceSpriteSheet_0: 1309783503
+      IceSpriteSheet_1: -1934740171
+      IceSpriteSheet_10: -1384858242
+      IceSpriteSheet_11: -1623600958
+      IceSpriteSheet_12: -1554388686
+      IceSpriteSheet_13: 1513702120
+      IceSpriteSheet_14: -1573631914
+      IceSpriteSheet_15: -393372037
+      IceSpriteSheet_16: 1216609833
+      IceSpriteSheet_17: -338941621
+      IceSpriteSheet_18: -231912811
+      IceSpriteSheet_19: -2138961404
+      IceSpriteSheet_2: -1461944638
+      IceSpriteSheet_20: 554856539
+      IceSpriteSheet_21: 327110288
+      IceSpriteSheet_22: 1004822830
+      IceSpriteSheet_23: -1816086155
+      IceSpriteSheet_24: -922552531
+      IceSpriteSheet_3: 756408243
+      IceSpriteSheet_4: 234218675
+      IceSpriteSheet_5: 2083169482
+      IceSpriteSheet_6: 319796086
+      IceSpriteSheet_7: -1963316315
+      IceSpriteSheet_8: 1736502527
+      IceSpriteSheet_9: 1904515170
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

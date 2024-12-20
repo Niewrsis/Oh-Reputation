@@ -9,6 +9,7 @@ namespace TowerSystem
     public class TowerShoot : MonoBehaviour
     {
         [SerializeField] private bool _isAoE;
+        [SerializeField] private bool _isAnimated;
 
         private TowerSO _towerSO;
         private Tower _tower;
@@ -21,7 +22,10 @@ namespace TowerSystem
         {
             _sr = GetComponent<SpriteRenderer>();
             _tower = GetComponent<Tower>();
-            //_animator = GetComponent<Animator>();
+            if(_isAnimated)
+            {
+                _animator = GetComponent<Animator>();
+            }
             _towerSO = _tower.TowerSO;
         }
         private void Update()
@@ -78,7 +82,10 @@ namespace TowerSystem
             {
                 ShootAoE();
             }
-            //_animator.SetTrigger("Attack");
+            if(_isAnimated)
+            {
+                _animator.SetTrigger("Attack");
+            }
             yield return new WaitForSeconds(_tower.Cooldown);
             _isShooting = false;
         }
